@@ -1,0 +1,55 @@
+<h2>Bus Schedules and Routes</h2>
+
+<div class="filter-container">
+  <input
+    type="text"
+    placeholder="Search by route, bus number, or stop..."
+    [(ngModel)]="searchQuery"
+    (input)="filterSchedules()"
+    class="search-input"
+  />
+  <input
+    type="date"
+    [(ngModel)]="filterDate"
+    (input)="filterSchedules()"
+    class="filter-input"
+  />
+  <input
+    type="time"
+    [(ngModel)]="filterTime"
+    (input)="filterSchedules()"
+    class="filter-input"
+  />
+  <input
+    type="text"
+    placeholder="Filter by destination..."
+    [(ngModel)]="filterDestination"
+    (input)="filterSchedules()"
+    class="filter-input"
+  />
+</div>
+
+<table class="bus-schedule-table">
+  <thead>
+    <tr>
+      <th>Route</th>
+      <th>Departure</th>
+      <th>Arrival</th>
+      <th>Bus Number</th>
+      <th>Stops</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let schedule of filteredSchedules">
+      <td>{{ schedule.route }}</td>
+      <td>{{ schedule.departure | date:'short' }}</td>
+      <td>{{ schedule.arrival | date:'short' }}</td>
+      <td>{{ schedule.busNumber }}</td>
+      <td>
+        <ul class="stops-list">
+          <li *ngFor="let stop of schedule.stops">{{ stop }}</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>

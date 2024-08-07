@@ -1,0 +1,54 @@
+.bus-schedule-table {
+  width: 80%;
+  border-collapse: collapse;
+  align-items: center;
+  margin: 20px 20px 60px 170px;
+  font-size: 1em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.bus-schedule-table thead tr {
+  background-color: #1366d9;
+  color: #ffffff;
+  text-align: left;
+}
+
+.bus-schedule-table th,
+.bus-schedule-table td {
+  padding: 12px 15px;
+}
+
+.bus-schedule-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.bus-schedule-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.bus-schedule-table tbody tr:last-of-type {
+  border-bottom: 2px solid #1366d9;
+}
+
+.bus-schedule-table tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.stops-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.stops-list li {
+  padding: 5px 0;
+}
+
+.search-input {
+  width: 20%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
