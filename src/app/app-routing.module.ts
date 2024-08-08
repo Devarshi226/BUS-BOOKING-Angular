@@ -4,12 +4,21 @@ import { HeaderComponent } from './Reusable-Component/header/header.component';
 import { HomepageComponent } from './Components/homepage/homepage.component';
 import { FooterComponent } from './Reusable-Component/footer/footer.component';
 import { BusScheduleComponent } from './Components/bus-schedule/bus-schedule.component';
+import { LoginComponent } from './login-signup/login/login.component';
+import { SignupComponent } from './login-signup/signup/signup.component';
+import { ForgotComponent } from './login-signup/forgot/forgot.component';
+import { ErrorComponent } from './Components/error/error.component';
 
 const routes: Routes = [
   {path:'header', component:HeaderComponent},
   {path:'', component:HomepageComponent},
   {path:'footer', component:FooterComponent},
-  {path:'bus-schedule', component:BusScheduleComponent}
+  {path:'bus-schedule', component:BusScheduleComponent},
+  {path:'login', component:LoginComponent},
+  {path:'signup', component:SignupComponent},
+  {path:'forgot', component:ForgotComponent},
+  {path:'error', component:ErrorComponent},
+  { path: '**', redirectTo: '/error' }
 ];
 
 @NgModule({

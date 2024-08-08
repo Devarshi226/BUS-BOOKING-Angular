@@ -29,15 +29,15 @@
           <i class="fas mr-2 fa-search"></i> Search Buses
         </button>
       </form> -->
-
+      <app-header></app-header>
       <div class="container">
         <div class="homePage">
           <form [formGroup]="searchForm">
             <div class="row align-items-end">
               <div class="form-group col-md-4">
                 <label><i class="fa fa-bus" aria-hidden="true"></i> From</label>
-                <select name="leaving_from" class="form-control form-control-sm custom-select" formControlName="leaving_from">
-                  <option value="">Select Place</option>
+                <select name="leaving_from" class="form-control form-control-sm custom-select" formControlName="departure">
+                  <option value=""><b>Select Place</b></option>
                   <option *ngFor="let place of places" [value]="place.key">{{ place.value }}</option>
                 </select>
               </div>
@@ -46,14 +46,14 @@
               </div>
               <div class="form-group col-md-4">
                 <label><i class="fa fa-bus" aria-hidden="true"></i> To</label>
-                <select name="going_to" class="form-control form-control-sm custom-select" formControlName="going_to">
-                  <option value="">Select Place</option>
+                <select name="going_to" class="form-control form-control-sm custom-select" formControlName="destination">
+                  <option value=""><b>Select Place</b></option>
                   <option *ngFor="let place of filteredPlaces" [value]="place.key">{{ place.value }}</option>
                 </select>
               </div>
               <div class="form-group col-md-3">
                 <label>Departing On</label>
-                <input type="date" class="form-control form-control-sm custom-date" name="depart_date" formControlName="depart_date">
+                <input type="date" class="form-control form-control-sm custom-date" name="depart_date" formControlName="date">
               </div>
             </div>
           </form>
@@ -65,8 +65,15 @@
         </div>
       </div>
 
-
-
+      <div *ngIf="buses.length > 0">
+        <h3>Available Buses</h3>
+        <ul>
+          <li *ngFor="let bus of buses">
+            {{ bus.name }} - {{ bus.departureTime }} to {{ bus.arrivalTime }} - ${{ bus.fare }}
+          </li>
+        </ul>
+      </div>
+      <app-footer></app-footer>
 <!-- </div> -->
 <!-- <div class="col-md-5 slider mt-3 ">
       <img src="../../../assets/redBus-coupons-offers-1586.png" class="img-fluid">

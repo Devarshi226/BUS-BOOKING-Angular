@@ -12,5 +12,6 @@ export class BusesService {
 
   searchBuses(departure: string, destination: string, date: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}?departure=${departure}&destination=${destination}&date=${date}`);
+
   }
 }

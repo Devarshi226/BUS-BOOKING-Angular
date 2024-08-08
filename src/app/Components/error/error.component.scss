@@ -1,0 +1,132 @@
+.error-div {
+  padding: 5rem;
+
+  br {
+    display: none;
+  }
+
+  .he {
+    padding-left: 3rem;
+    font-size: 18px;
+  }
+
+  .h1 {
+    font-size: 4rem;
+    margin-top: 7rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .p {
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .button {
+    text-align: center;
+    margin-top: 3.8rem;
+
+    button {
+      padding: 15px 35px 15px 35px;
+      border-radius: 5px;
+      color: white;
+      border: none;
+      background-color: #0056b3;
+      margin-bottom: 3.5rem;
+    }
+
+    button:hover {
+      background-color: #0350a3;
+    }
+  }
+
+}
+
+
+
+// mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+
+
+
+@media screen and (max-width: 450px) {
+
+  .error-div {
+    padding: 1rem;
+
+    br {
+    display: block;
+    }
+
+
+    .he {
+      padding-left: 1rem;
+    }
+
+    .h1 {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+
+    .p {
+      margin-top: 1rem;
+    }
+
+    .button {
+      margin-top: 1.8rem;
+    }
+
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+
+
+@media screen and (max-width: 395px) {
+
+  .error-div {
+    padding: 1rem;
+
+    br {
+    display: block;
+    }
+
+
+    .he {
+      padding-left: 1rem;
+    }
+
+    .h1 {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+
+    .p {
+      margin-top: 1rem;
+    }
+
+    .button {
+      margin-top: 1.8rem;
+    }
+
+  }
+
+
+}
