@@ -1,0 +1,34 @@
+<div class="maincard">
+  <div class="signupimg">
+      <img src="../../../assets/forgot.jpg" style="height: 360px; width: 410px; margin-top: 70px;">
+  </div>
+  <div class="signupdata">
+      <div>
+          <p class="head">Forgot Your Password?</p>
+      </div>
+      <div>
+          <p class="reset">No worry's, we'll send you reset instruction.</p>
+      </div>
+      <div class="container">
+          <form [formGroup]="ForgotForm">
+              <div class="form-group">
+                  <input type="email" id="email" name="email" placeholder="Enter your email" class="email"
+                      style="padding-left: 40px;" formControlName="email">
+                  <ion-icon name="mail-outline" class="emailicon"></ion-icon>
+              </div>
+
+          </form>
+      </div>
+
+
+      <div class="button-container main">
+              <button class="button signup-button" [disabled]="!ForgotForm.get('email')?.valid" [ngStyle]="{'background-color': ForgotForm.get('email')?.valid ? '#0056b3' : 'lightgray'}" (click)="recoverPassword()">Recover Password</button>
+
+
+      </div>
+      <div class="f-row">
+          <p class="login-note" style="font-size: 14px;">You want to Go back? &nbsp;</p>
+          <p class="link" style="font-size: 14px;" [routerLink]="['/','login']">Log in</p>
+      </div>
+  </div>
+</div>
