@@ -13,13 +13,21 @@ import { FormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { LoginComponent } from './login-signup/login/login.component';
+import { SignupComponent } from './login-signup/signup/signup.component';
+import { ForgotComponent } from './login-signup/forgot/forgot.component';
+import { ErrorComponent } from './Components/error/error.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     HeaderComponent,
     FooterComponent,
-    BusScheduleComponent
+    BusScheduleComponent,
+    LoginComponent,
+    SignupComponent,
+    ForgotComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
