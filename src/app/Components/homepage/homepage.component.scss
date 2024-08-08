@@ -1,45 +1,146 @@
-// .slider img {
-//   width:100%;
-//   height: 276px;
+// .homePage {
+//   width: 60%;
+//   margin: 40px 0px 60px 150px;
+//   padding: 20px;
+//   padding-left: 30px;
+//   padding-right: 0px;
+//   background-color: #f1f3f6;
+//   border-radius: 60px 0px 0px 60px;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 // }
-// .block {
-//   background: #FBFBFB;
-//   height: 276px;
-//   padding: 35px;
-// }
-// .block li {
-//   margin: 5px 0;
+// .container{
+//   margin-top: 20px;
+//   display: flex;
+//   flex-direction: row;
 // }
 
 
+// .form-group {
+//   margin-bottom: 1rem;
+// }
+
+// label {
+//   display: block;
+//   margin-bottom: .5rem;
+//   font-weight: bold;
+//   color: #333;
+// }
+
+// .custom-select, .custom-date {
+//   border: none;
+//   border-bottom: 2px solid #0056b3;
+//   border-radius: 0;
+//   box-shadow: none;
+//   width: 100%;
+//   padding: .375rem 0;
+//   background-color: transparent;
+//   color: #495057;
+//   font-size: 1rem;
+// }
+
+// .custom-select:focus, .custom-date:focus {
+//   outline: none;
+//   border-bottom: 2px solid #0056b3;
+// }
+
+// .custom-select option {
+//   background-color: #fff;
+//   color: #495057;
+// }
+
+// .btn-search {
+//   background-color: #0056b3;
+//   color: white;
+//   height: 126px;
+//   // font-weight: bold;
+//   border-radius: 0px 60px 60px 0px;
+//   // margin-left: -130px;
+//   margin: 40px auto;
+//   margin-right: 310px;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+// }
+
+// .btn-search:disabled {
+//   background-color: #6c757d;
+// }
+
+// .row.align-items-end {
+//   align-items: flex-end;
+//   width: 100%;
+// }
 
 
-// .select-bus {
-//   background: url(../../../assets/sslcommerz_logo.png) ;
-//   background-size: cover;
-//   position: relative;
-//   min-height:300px
-//   }
+.homePage {
+  width: 60%;
+  margin: 40px 0px 60px 150px;
+  padding: 20px;
+  padding-left: 30px;
+  padding-right: 0px;
+  background-color: #f1f3f6;
+  border-radius: 60px 0px 0px 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-//   // .overlap {
-//   //     background-color: rgb(178, 190, 195,.5);
-//   //     position: absolute;
-//   //     left: 0;
-//   //     top: 0;
-//   //     height: 100%;
-//   //     width: 100%
-//   // }
+.container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
 
-//   .btn-search {
-//       background: #1366d9;
-//       border-color:#1366d9 ;
-//       color:#fff;
-//   }
-//   .form-inline {
-//     display: flex;
-//     align-items: center;
-//     flex-wrap: nowrap; /* Prevent wrapping */
-//     gap: 15px; /* Space between elements */
-//   }
+.form-group {
+  margin-bottom: 1rem;
+}
 
+label {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: bold;
+  color: #333;
+}
 
+.custom-select, .custom-date {
+  border: none;
+  border-bottom: 2px solid #0056b3;
+  border-radius: 0;
+  box-shadow: none;
+  width: 100%;
+  padding: .375rem 0;
+  background-color: transparent;
+  color: #495057;
+  font-size: 1rem;
+}
+
+.custom-select:focus, .custom-date:focus {
+  outline: none;
+  border-bottom: 2px solid #0056b3;
+}
+
+.custom-select option {
+  background-color: #fff;
+  color: #495057;
+}
+
+.btn-search {
+  background-color: #0056b3;
+  color: white;
+  height: 126px;
+  border-radius: 0px 60px 60px 0px;
+  margin: 40px auto;
+  margin-right: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-search:disabled {
+  background-color: #6c757d;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-wrapper ion-icon {
+  font-size: 2rem;
+  color: #031221;
+}

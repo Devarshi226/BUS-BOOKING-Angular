@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SelectBusService } from 'src/app/Service/select-bus.service';
 import { Observable, of } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
-
+import { map, startWith, switchMap } from 'rxjs/operators';
+import { BusesService } from 'src/app/Service/buses.service';
 
 interface BusStops {
   [key: string]: string[];
@@ -55,6 +55,14 @@ export class HomepageComponent  implements OnInit {
       console.log(this.searchForm.value);
       // Handle form submission
     }
+  }
+
+  swapCities(): void {
+    const temp = this.searchForm.get('leaving_from')?.value;
+    this.searchForm.patchValue({
+      leaving_from: this.searchForm.get(' going_to')?.value,
+      going_to: temp
+    });
   }
 
 
