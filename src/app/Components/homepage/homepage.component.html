@@ -1,12 +1,12 @@
-<div class="overlap"></div>
+<!-- <div class="overlap"></div>
 <div class="container">
   <div class="row justify-content-center pb-5 pt-3" >
-    <div class="col-md-5 block mt-3">
-      <form [formGroup]="searchForm">
+    <div class="col-md-5 block mt-3"> -->
+<!-- <form [formGroup]="searchForm">
         <div class="row">
           <div class="form-group col-md-6">
             <label>From</label>
-            <select  name="leaving_form" class="form-control form-control-sm" formControlName="leaving_from">
+            <select  name="leaving_form" class="form-control form-control-sm" formControlName="leaving_from" >
               <option value="">Select Place</option>
               <option *ngFor="let place of places" [value]="place.key">{{ place.value }}</option>
             </select>
@@ -28,19 +28,48 @@
         <button [disabled]="searchForm.invalid" class="btn btn-block mt-3 btn-search btn-sm" (click)="onSubmit()">
           <i class="fas mr-2 fa-search"></i> Search Buses
         </button>
-      </form>
+      </form> -->
+
+      <div class="container">
+        <div class="homePage">
+          <form [formGroup]="searchForm">
+            <div class="row align-items-end">
+              <div class="form-group col-md-4">
+                <label><i class="fa fa-bus" aria-hidden="true"></i> From</label>
+                <select name="leaving_from" class="form-control form-control-sm custom-select" formControlName="leaving_from">
+                  <option value="">Select Place</option>
+                  <option *ngFor="let place of places" [value]="place.key">{{ place.value }}</option>
+                </select>
+              </div>
+              <div class="form-group col-md-1 icon-wrapper">
+                <ion-icon name="swap-horizontal"  (click)="swapCities()"></ion-icon>
+              </div>
+              <div class="form-group col-md-4">
+                <label><i class="fa fa-bus" aria-hidden="true"></i> To</label>
+                <select name="going_to" class="form-control form-control-sm custom-select" formControlName="going_to">
+                  <option value="">Select Place</option>
+                  <option *ngFor="let place of filteredPlaces" [value]="place.key">{{ place.value }}</option>
+                </select>
+              </div>
+              <div class="form-group col-md-3">
+                <label>Departing On</label>
+                <input type="date" class="form-control form-control-sm custom-date" name="depart_date" formControlName="depart_date">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="">
+          <button [disabled]="searchForm.invalid" class="btn btn-block btn-search btn-sm" (click)="onSubmit()">
+            <i class="fas mr-2 fa-search"></i> Search Buses
+          </button>
+        </div>
+      </div>
 
 
 
-
-
-
-
-
-
-    </div>
-    <!-- <div class="col-md-5 slider mt-3 ">
+<!-- </div> -->
+<!-- <div class="col-md-5 slider mt-3 ">
       <img src="../../../assets/redBus-coupons-offers-1586.png" class="img-fluid">
     </div> -->
-  </div>
-</div>
+<!-- </div>
+</div> -->
