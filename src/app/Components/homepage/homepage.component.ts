@@ -57,13 +57,24 @@ export class HomepageComponent  implements OnInit {
     }
   }
 
+  // swapCities(): void {
+  //   const temp = this.searchForm.get('leaving_from')?.value;
+  //   this.searchForm.patchValue({
+  //     leaving_from: this.searchForm.get(' going_to')?.value,
+  //     going_to: temp
+  //   });
+  // }
+
   swapCities(): void {
-    const temp = this.searchForm.get('leaving_from')?.value;
+    const leavingFromValue = this.searchForm.get('leaving_from')?.value;
+    const goingToValue = this.searchForm.get('going_to')?.value;
+
     this.searchForm.patchValue({
-      leaving_from: this.searchForm.get(' going_to')?.value,
-      going_to: temp
+      leaving_from: goingToValue,
+      going_to: leavingFromValue
     });
   }
+
 
 
 }
