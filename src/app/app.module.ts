@@ -17,6 +17,7 @@ import { LoginComponent } from './login-signup/login/login.component';
 import { SignupComponent } from './login-signup/signup/signup.component';
 import { ForgotComponent } from './login-signup/forgot/forgot.component';
 import { ErrorComponent } from './Components/error/error.component';
+import { BusSearchDataComponent } from './Components/bus-search-data/bus-search-data.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { ErrorComponent } from './Components/error/error.component';
     LoginComponent,
     SignupComponent,
     ForgotComponent,
-    ErrorComponent
+    ErrorComponent,
+    BusSearchDataComponent
   ],
   imports: [
     BrowserModule,

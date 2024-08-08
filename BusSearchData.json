@@ -1,0 +1,16 @@
+{
+  "BusSearchData": [
+    {
+      "id": "2e38",
+      "departure": "surat",
+      "destination": "rajkot",
+      "date": "2024-08-11"
+    },
+    {
+      "id": "8958",
+      "departure": "ahmedabad",
+      "destination": "surat",
+      "date": "2024-08-09"
+    }
+  ]
+}

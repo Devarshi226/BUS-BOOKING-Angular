@@ -5,6 +5,7 @@ import { SelectBusService } from 'src/app/Service/select-bus.service';
 import { Observable, of } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
 import { BusesService } from 'src/app/Service/buses.service';
+import { SearchService } from 'src/app/Service/search.service';
 
 // interface Bus {
 //   name: string;
@@ -21,6 +22,7 @@ import { BusesService } from 'src/app/Service/buses.service';
 export class HomepageComponent  implements OnInit {
   searchForm: FormGroup;
   buses: any[] = [];
+  minDate!: string;
 
   places = [
     { key: 'ahmedabad', value: 'Ahmedabad' },
@@ -33,7 +35,7 @@ export class HomepageComponent  implements OnInit {
   ];
   filteredPlaces: { key: string, value: string }[] = [...this.places];
 
-  constructor(private fb: FormBuilder, private busService: BusesService) {
+  constructor(private fb: FormBuilder, private search:SearchService, private route:Router) {
     this.searchForm = this.fb.group({
       departure: ['', Validators.required],
       destination: ['', Validators.required],
@@ -45,6 +47,9 @@ export class HomepageComponent  implements OnInit {
     this.searchForm.get('departure')?.valueChanges.subscribe(value => {
       this.filterGoingToOptions(value);
     });
+
+    const today = new Date();
+    this.minDate = today.toISOString().split('T')[0];
   }
 
   filterGoingToOptions(leavingFrom: string) {
@@ -57,15 +62,15 @@ export class HomepageComponent  implements OnInit {
 
   onSubmit() {
     if (this.searchForm.valid) {
-      const { departure, destination, date } = this.searchForm.value;
-      this.busService.searchBuses(departure, destination, date).subscribe(
-        (data) => {
-          this.buses = data;
-          console.log('Buses fetched successfully', this.buses);
-
+      this.search.saveSearchData(this.searchForm.value).subscribe(
+        (response) => {
+          console.log('Form data saved:', response);
+          this.route.navigate(['/search']);
+          // Handle success response, e.g., show a notification
         },
         (error) => {
-          console.error('Error fetching buses', error);
+          console.error('Error saving form data:', error);
+          // Handle error response, e.g., show an error message
         }
       );
     }
