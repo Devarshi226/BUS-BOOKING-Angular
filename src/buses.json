@@ -1,0 +1,54 @@
+{
+  "buses": [
+    {
+      "id": 1,
+      "name": "Bus 1",
+      "departure": "Ahmedabad",
+      "destination": "Surat",
+      "date": "2024-08-10",
+      "departureTime": "08:00 AM",
+      "arrivalTime": "12:00 PM",
+      "fare": 500
+    },
+    {
+      "id": 2,
+      "name": "Bus 2",
+      "departure": "Ahmedabad",
+      "destination": "Surat",
+      "date": "2024-08-10",
+      "departureTime": "10:00 AM",
+      "arrivalTime": "02:00 PM",
+      "fare": 600
+    },
+    {
+      "id": 3,
+      "name": "Bus 3",
+      "departure": "Ahmedabad",
+      "destination": "Surat",
+      "date": "2024-08-10",
+      "departureTime": "12:00 PM",
+      "arrivalTime": "04:00 PM",
+      "fare": 550
+    },
+    {
+      "id": 4,
+      "name": "Bus 4",
+      "departure": "Rajkot",
+      "destination": "Vadodara",
+      "date": "2024-08-10",
+      "departureTime": "07:00 AM",
+      "arrivalTime": "11:00 AM",
+      "fare": 450
+    },
+    {
+      "id": 5,
+      "name": "Bus 5",
+      "departure": "Rajkot",
+      "destination": "Vadodara",
+      "date": "2024-08-10",
+      "departureTime": "09:00 AM",
+      "arrivalTime": "01:00 PM",
+      "fare": 500
+    }
+  ]
+}
