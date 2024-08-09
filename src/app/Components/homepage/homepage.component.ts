@@ -30,7 +30,7 @@ export class HomepageComponent  implements OnInit {
     { key: 'bhavnagar', value: 'Bhavnagar' },
     { key: 'rajkot', value: 'Rajkot' },
     { key: 'amreli', value: 'Amreli' },
-    { key: 'vadodra', value: 'Vadodra' },
+    { key: 'vadodara', value: 'Vadodara' },
     { key: 'mumbai', value: 'Mumbai' },
   ];
   filteredPlaces: { key: string, value: string }[] = [...this.places];
