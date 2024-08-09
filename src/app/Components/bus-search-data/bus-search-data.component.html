@@ -1,0 +1,15 @@
+<app-header></app-header>
+
+
+
+<div class="row text-center mt-4" *ngFor="let data of searchData">
+  <h6 class=" text-capitalize col-md-12 mb-3 text-center">{{data.departure}} - {{data.destination}} on {{data.date | date:'longDate'}}</h6>
+</div>
+
+
+
+
+
+
+
+<app-footer></app-footer>
