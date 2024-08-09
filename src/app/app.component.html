@@ -1,3 +1,8 @@
-
+<div class="theme-switch-container">
+  <button class="theme-switch" (click)="themeService.toggleTheme()">
+    {{ themeService.isDarkMode() ? '🌚' : '🌞' }}
+  </button>
+</div>
 <router-outlet></router-outlet>
+
 

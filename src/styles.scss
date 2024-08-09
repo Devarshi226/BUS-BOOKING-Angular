@@ -1,6 +1,65 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import 'light-theme';
+@import 'dark-theme';
 
 body {
  margin: 0;
  font-family: "Prompt", sans-serif;
+}
+
+.light-theme {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+.dark-theme {
+  --background-color: #121212;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle {
+  transition: background-color 0.3s ease;
+}
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #ffffff;
+  --primary-color: #1366d9;
+  --secondary-color: #f3f4f6;
+  /* Add more variables as needed */
+}
+
+/* Dark theme */
+.dark-theme {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #bb86fc;
+  --secondary-color: #1f1f1f;
+  /* Add more variables as needed */
+}
+
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.header {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.button {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--primary-color);
 }
