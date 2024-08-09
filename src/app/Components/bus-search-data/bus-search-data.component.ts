@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { SearchService } from 'src/app/Service/search.service';
 
@@ -7,23 +8,43 @@ import { SearchService } from 'src/app/Service/search.service';
   styleUrls: ['./bus-search-data.component.scss']
 })
 export class BusSearchDataComponent {
-  searchData: any[] = []; // Array to hold the data fetched from the API
-
-  constructor(private search: SearchService) {}
+  searchData: any[] = [];
+  buses: any[] = [];
+  constructor(private search: SearchService, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.search.getSearchData().subscribe(
       (data) => {
         if (data && data.length > 0) {
-          // Get the last entry in the array
-          this.searchData = [data[data.length - 1]]; // Assign only the last entry
+          this.searchData = data.slice(-1);
+          this.fetchAndFilterBuses();
         }
       },
       (error) => {
-        console.error('Error fetching data', error);
+        console.error('Error fetching search data', error);
       }
     );
   }
 
+  fetchAndFilterBuses() {
+    if (this.searchData) {
+      const lastSearch = this.searchData[0];
 
-}
+      this.http.get<any[]>('http://localhost:4000/buses').subscribe(
+        (busData) => {
+          this.buses = busData.filter(bus =>
+            bus.departure.toLowerCase() === lastSearch.departure.toLowerCase() &&
+            bus.destination.toLowerCase() === lastSearch.destination.toLowerCase()
+          );
+
+        },
+        (error) => {
+          console.error('Error fetching bus data', error);
+        }
+      );
+    }
+  }
+  }
+
+
+
