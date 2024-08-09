@@ -7,9 +7,36 @@
 </div>
 
 
+<table *ngIf="buses.length > 0" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Bus Name</th>
+      <th>Departure Time</th>
+      <th>Arrival Time</th>
+      <th>Coach Type</th>
+      <th>Seats Available</th>
+      <th>Fare</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bus of buses">
+      <td>{{ bus.name }}</td>
+      <td>{{ bus.departureTime }}</td>
+      <td>{{ bus.arrivalTime }}</td>
+      <td>{{ bus['coach type'] }}</td>
+      <td>{{ bus.seats }}</td>
+      <td>{{ bus.fare }}</td>
+      <td>
+        <button type="button" class="btn btn-secondary">View Seats</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-
-
+<div *ngIf="buses.length === 0" class="text-center mt-4">
+  <p>No buses available for the selected route and date.</p>
+</div>
 
 
 <app-footer></app-footer>

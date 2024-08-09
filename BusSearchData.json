@@ -1,16 +1,46 @@
 {
   "BusSearchData": [
     {
-      "id": "2e38",
+      "id": "77ca",
       "departure": "surat",
-      "destination": "rajkot",
-      "date": "2024-08-11"
+      "destination": "ahmedabad",
+      "date": "2024-08-24"
     },
     {
-      "id": "8958",
+      "id": "9fe8",
+      "departure": "rajkot",
+      "destination": "bhavnagar",
+      "date": "2024-08-23"
+    },
+    {
+      "id": "c7ea",
+      "departure": "amreli",
+      "destination": "rajkot",
+      "date": "2024-08-17"
+    },
+    {
+      "id": "e94f",
       "departure": "ahmedabad",
       "destination": "surat",
-      "date": "2024-08-09"
+      "date": "2024-08-17"
+    },
+    {
+      "id": "429e",
+      "departure": "ahmedabad",
+      "destination": "surat",
+      "date": "2024-08-16"
+    },
+    {
+      "id": "9e7d",
+      "departure": "ahmedabad",
+      "destination": "surat",
+      "date": "2024-08-18"
+    },
+    {
+      "id": "c7dc",
+      "departure": "rajkot",
+      "destination": "ahmedabad",
+      "date": "2024-08-15"
     }
   ]
 }
