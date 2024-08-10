@@ -1,30 +1,148 @@
-table {
+// table {
+//   width: 80%;
+//   border-collapse: collapse;
+//   margin: 20px 0 20px 200px;
+//   font-size: 16px;
+//   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+// }
+
+// table th {
+//   background-color: #1366d9;
+//   color: #ffffff;
+//   text-align: left;
+// }
+
+// table th, table td {
+//   padding: 12px 15px;
+//   border-bottom: 1px solid #dddddd;
+// }
+
+// table tbody tr {
+//   background-color: #ffffff;
+//   position: relative; /* For the ::after pseudo-element */
+//   transition: background-color 0.3s ease;
+// }
+
+// table tbody tr::after {
+//   content: '';
+//   display: block;
+//   position: absolute;
+//   left: 0;
+//   bottom: 0;
+//   width: 100%;
+//   height: 3px; /* Height of the line */
+//   background-color: transparent; /* Default state */
+//   transition: background-color 0.3s ease;
+// }
+
+// table tbody tr:hover {
+//   background-color: #f2f2f2;
+// }
+
+// table tbody tr:hover::after {
+//   background-color: #0056b3; /* Blue line on hover */
+// }
+
+// table tbody tr:nth-child(even) {
+//   background-color: #f9f9f9;
+// }
+
+// table tbody tr:nth-child(even):hover {
+//   background-color: #f2f2f2;
+// }
+
+// table th {
+//   font-weight: 600;
+// }
+
+// table td {
+//   font-weight: 400;
+// }
+
+
+// @media (max-width: 600px) {
+//   table thead {
+//     display: none;
+//   }
+
+//   table, table tbody, table tr, table td {
+//     display: block;
+//     width: 100%;
+//   }
+
+//   table tr {
+//     margin-bottom: 15px;
+//   }
+
+//   table td {
+//     text-align: right;
+//     padding-left: 50%;
+//     position: relative;
+//   }
+
+//   table td::before {
+//     content: attr(data-label);
+//     position: absolute;
+//     left: 0;
+//     width: 50%;
+//     padding-left: 15px;
+//     font-weight: bold;
+//     text-align: left;
+//   }
+
+//   .view-seats-btn {
+//     width: 100%;
+//     text-align: center;
+//   }
+// }
+
+
+
+
+
+
+
+.filter-form {
+  margin-bottom: 20px;
+}
+
+.filter-form .form-group {
+  margin-bottom: 15px;
+  width: 20%;
+}
+
+.filter-form label {
+  font-weight: bold;
+}
+
+.table {
   width: 80%;
   border-collapse: collapse;
-  margin: 20px 0 20px 200px;
+  margin: 20px auto;
   font-size: 16px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-table th {
-  background-color: #1366d9;
+.table th {
+  background-color: #0056b3; /* Your main color */
   color: #ffffff;
   text-align: left;
 }
 
-table th, table td {
+.table th, .table td {
   padding: 12px 15px;
   border-bottom: 1px solid #dddddd;
 }
 
-table tbody tr {
+.table tbody tr {
   background-color: #ffffff;
   position: relative; /* For the ::after pseudo-element */
   transition: background-color 0.3s ease;
 }
 
-table tbody tr::after {
+.table tbody tr::after {
   content: '';
   display: block;
   position: absolute;
@@ -36,52 +154,70 @@ table tbody tr::after {
   transition: background-color 0.3s ease;
 }
 
-table tbody tr:hover {
+.table tbody tr:hover {
   background-color: #f2f2f2;
 }
 
-table tbody tr:hover::after {
+.table tbody tr:hover::after {
   background-color: #0056b3; /* Blue line on hover */
 }
 
-table tbody tr:nth-child(even) {
+.table tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-table tbody tr:nth-child(even):hover {
+.table tbody tr:nth-child(even):hover {
   background-color: #f2f2f2;
 }
 
-table th {
+.table th {
   font-weight: 600;
 }
 
-table td {
+.table td {
   font-weight: 400;
 }
 
+.view-seats-btn {
+  background-color: #0056b3;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.view-seats-btn:hover {
+  background-color: #004494;
+}
+
+.view-seats-btn:focus {
+  outline: none;
+}
 
 @media (max-width: 600px) {
-  table thead {
+  .table thead {
     display: none;
   }
 
-  table, table tbody, table tr, table td {
+  .table, .table tbody, .table tr, .table td {
     display: block;
     width: 100%;
   }
 
-  table tr {
+  .table tr {
     margin-bottom: 15px;
   }
 
-  table td {
+  .table td {
     text-align: right;
     padding-left: 50%;
     position: relative;
   }
 
-  table td::before {
+  .table td::before {
     content: attr(data-label);
     position: absolute;
     left: 0;
@@ -96,3 +232,4 @@ table td {
     text-align: center;
   }
 }
+
