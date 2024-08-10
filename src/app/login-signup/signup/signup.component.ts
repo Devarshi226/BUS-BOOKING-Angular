@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/Service/authentication.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -17,7 +19,7 @@ export class SignupComponent {
   isText: boolean = false;
 
 
-  constructor( private fb:FormBuilder, private route:Router){}
+  constructor( private fb:FormBuilder, private route:Router, private fireauth: AuthenticationService){}
    ngOnInit(){
      this.signinForm = this.fb.group({
        userName:['', [Validators.required]],
@@ -33,31 +35,28 @@ export class SignupComponent {
     return this.signinForm.controls;
   }
   onSubmit(): void{
-    debugger
-    this.roleUser = this.signinForm.value.role
-    // this.auth.signUp(this.signinForm.value, this.roleUser).subscribe(
-    //   (res) => {
-    //     console.log(res);
-    //     this.toastr.success('Registration Completed Successfully', 'Success!');
-    //     this.route.navigate(['/login']);
-    //   },
-    //   (error) => {
-    //     this.toastr.error(error.error.message, 'Error!');
-    //   }
-    // );
+    this.fireauth.signUp({
+      Email: this.signinForm.value.email,
+      password: this.signinForm.value.password
+    }).subscribe((userCredential)=>{
+      this.uid = userCredential.user.uid;
+      localStorage.setItem('uid',this.uid);
+      this.signinForm.reset();
+      this.route.navigate(['login']);
 
-    //Firebase
-      // this.fireauth.signUp({
-      //   email: this.signinform.value.email,
-      //   password: this.signinform.value.password
 
-      // }).subscribe((userCredential)=>{
-      //   this.uid = userCredential.user.uid;
-      //   localStorage.setItem('uid',this.uid);
+      // this.dataservice.sendUserdata({
+      //   userName: this.signUpForm.value.userName,
+      //   role: this.signUpForm.value.role,
+      //   mobileNo: this.signUpForm.value.mobileNo,
 
-      //   this.signinform.reset();
-      //   this.route.navigate(['login']);
       // })
+    }, (error:any) => {
+      console.error(error);
+    });
+
+
+
       }
       hideShowPass() {
         this.isText = !this.isText;

@@ -6,7 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BusesService {
-  private apiUrl = 'http://localhost:3000/buses';
+  // private apiUrl = 'http://localhost:3000/buses';
+  private apiUrl = '  https://vigilant-carnival-jjrgg5x4vjpcp7x6-3000.app.github.dev/';
+
+
 
   constructor(private http: HttpClient) { }
 

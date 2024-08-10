@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/Service/authentication.service';
 
 @Component({
   selector: 'app-forgot',
@@ -11,10 +12,8 @@ export class ForgotComponent {
   ForgotForm!: FormGroup;
   isRecoveringpassword: boolean = false;
 
-  constructor( private route:Router , private fb:FormBuilder){
-    // this.ForgotForm = this.fb.group({
-    //   username:['']
-    // })
+  constructor( private route:Router , private fb:FormBuilder, private FirebaseAuth: AuthenticationService) {
+
   }
   ngOnInit() {
     this.ForgotForm = this.fb.group({
@@ -24,13 +23,11 @@ export class ForgotComponent {
   }
 
   recoverPassword(){
-  //   if (this.ForgotForm.valid) {
-
-
-  //     this.auth.forgotPassword(this.ForgotForm.value).subscribe((res:any) => {
-  //       console.log("res", res);
-  //       this.route.navigate(['/reset']);
-  //     })
-  //    }
+   if (this.ForgotForm.valid) {
+    this.isRecoveringpassword=true;
+    this.FirebaseAuth.forgotPassword(this.ForgotForm.value.email).subscribe(()=>{
+      this.isRecoveringpassword = false
+    })
    }
+  }
 }
