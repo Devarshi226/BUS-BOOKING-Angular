@@ -13,14 +13,55 @@ table {
 }
 
 .footer {
-  border-top: 3px solid #1366d9;
+  border-top: 3px solid var(--primary-color);
   margin-top: 50px;
 }
 .block {
-  background: #FBFBFB;
+  background: var(--card-background-color);
   height: 276px;
   padding: 35px;
+  color: (--second-text-color);
 }
 .block li {
   margin: 5px 0;
 }
+
+
+// .footer {
+//   background-color: var(--background-color);
+//   color: var(--text-color);
+//   padding: 20px 0;
+// }
+
+// .card {
+//   background-color: var(--card-background-color);
+//   border: none;
+//   /* Size remains unchanged */
+// }
+
+// h5 {
+//   color: var(--primary-color);
+// }
+
+// a {
+//   color: var(--text-color);
+// }
+
+// a:hover {
+//   color: var(--primary-color);
+//   text-decoration: underline;
+// }
+
+// ul li i {
+//   color: var(--icon-color);
+// }
+
+// .info_right ul li {
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 10px;
+// }
+
+// .info_right ul li i {
+//   margin-right: 10px;
+// }

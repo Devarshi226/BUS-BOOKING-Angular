@@ -35,8 +35,8 @@
           <form [formGroup]="searchForm">
             <div class="row align-items-end">
               <div class="form-group col-md-4">
-                <label><i class="fa fa-bus" aria-hidden="true"></i> From</label>
-                <select name="leaving_from" class="form-control form-control-sm custom-select" formControlName="departure">
+                <label style="color: var(--second-text-color);"><i class="fa fa-bus" aria-hidden="true"></i> From</label>
+                <select name="leaving_from" class="form-control form-control-sm custom-select" formControlName="departure" style="color: var(--second-text-color);">
                   <option value=""><b>Select Place</b></option>
                   <option *ngFor="let place of places" [value]="place.key">{{ place.value }}</option>
                 </select>
@@ -45,21 +45,21 @@
                 <ion-icon name="swap-horizontal"  (click)="swapCities()"></ion-icon>
               </div>
               <div class="form-group col-md-4">
-                <label><i class="fa fa-bus" aria-hidden="true"></i> To</label>
-                <select name="going_to" class="form-control form-control-sm custom-select" formControlName="destination">
+                <label style="color: var(--second-text-color);"><i class="fa fa-bus" aria-hidden="true"></i> To</label>
+                <select name="going_to" class="form-control form-control-sm custom-select" formControlName="destination" style="color: var(--second-text-color);">
                   <option value=""><b>Select Place</b></option>
                   <option *ngFor="let place of filteredPlaces" [value]="place.key">{{ place.value }}</option>
                 </select>
               </div>
               <div class="form-group col-md-3">
-                <label>Departing On</label>
-                <input type="date" class="form-control form-control-sm custom-date" name="depart_date" formControlName="date"  [min]="minDate">
+                <label style="color: var(--second-text-color);">Departing On</label>
+                <input type="date" class="form-control form-control-sm custom-date" name="depart_date" formControlName="date"  [min]="minDate" style="color: var(--second-text-color);">
               </div>
             </div>
           </form>
         </div>
         <div class="">
-          <button [disabled]="searchForm.invalid" class="btn btn-block btn-search btn-sm" (click)="onSubmit()">
+          <button [disabled]="searchForm.invalid" class="btn btn-block btn-search btn-sm" (click)="onSubmit()" style="color: white">
             <i class="fas mr-2 fa-search"></i> Search Buses
           </button>
         </div>

@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:'forgot', component:ForgotComponent},
   {path:'error', component:ErrorComponent},
   {path:'search', component:BusSearchDataComponent},
-  {path:'seat-selaction', component:SeatSelectionComponent},
+  {path:'seatselaction', component:SeatSelectionComponent},
   { path: '**', redirectTo: '/error' }
 
 ];
