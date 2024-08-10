@@ -22,6 +22,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import { SeatSelectionComponent } from './Components/seat-selection/seat-selection.component';
 import {MatIconModule} from '@angular/material/icon';
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { AuthApi } from './environment/authApi';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +53,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatFormFieldModule,
     MatButtonModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    AngularFireModule.initializeApp(AuthApi.firebaseConfig),
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

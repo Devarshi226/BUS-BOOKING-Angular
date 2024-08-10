@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/Service/authentication.service';
+
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,7 @@ export class LoginComponent {
     ForgotForm: any;
 
   constructor(private fb:FormBuilder ,
-                        private route: Router){}
+                        private route: Router, private FirebaseAuth: AuthenticationService ){}
     ngOnInit(): void {
       this.loginForm = this.fb.group({
         email:['',Validators.required],
@@ -26,56 +28,24 @@ export class LoginComponent {
     }
 
     onLogin(){
-      // if (this.loginForm.valid) {
-      //   const useremail =   this.loginForm.value.email
-
-      //   this.auth.login(this.loginForm.value).subscribe({
-      //     next: (res) => {
-      //       this.loginForm.reset();
-      //       localStorage.setItem('email', useremail);
-      //     },
-      //     error: (err) => {
-
-      //       if (err) {
-      //         // this.toast.error({
-      //         //   detail: 'Error',
-      //         //   summary: 'Email or Password is not correct!',
-      //         //   duration: 5000,
-      //         // });
-      //         this.toastr.error('Email or Passeword is not correct!', 'Eroor', {timeOut: 3000,});
-
-      //       }
-      //     },
-      //   });
-      // } else {
-      //   this.loginForm.invalid;
-      //   // this.toast.error({
-      //   //   detail: 'Error',
-      //   //   summary: 'Please Enter username And Password!',
-      //   //   duration: 5000,
-      //   // });
-      //   this.toastr.error('Please Enter username And Password!', 'Eroor', {timeOut: 3000,})
-      // }
-
-
-      //Firebase
-      // this.fireauth.signIn({
-      //   email: this.loginForm.value.username,
-      //   password: this.loginForm.value.password
-      // }).subscribe(()=>{
-      //   this.fireauth.sendtoken()
-      //   this.route.navigate(['']);
-      //   this.toastr.success( 'Welcome to the FOOD.IO','Login', {timeOut: 3000,});
-      //   localStorage.setItem('username', this.loginForm.value.username);
-      // },error => {
-
-      //   this.route.navigate(['login']);
-      //   this.toastr.error( 'Check Your email or password','Wrong Credential', {timeOut: 3000,});
-
-      // })
-      // console.log('register')
-      // console.log(this.loginForm.value);
+      if(this.loginForm.valid){
+        this.FirebaseAuth.signIn({
+          email: this.loginForm.value.email,
+          password: this.loginForm.value.password
+        }).subscribe(()=>{
+          this.FirebaseAuth.sendtoken()
+          this.route.navigate(['']);
+          localStorage.setItem('email', this.loginForm.value.email);
+        },error => {
+          this.route.navigate(['login']);
+           console.log("Invalid Email or Password");
+        })
+        console.log('Login')
+        console.log(this.loginForm.value);
+      }
     }
+
+
     hideShowPass() {
       this.isText = !this.isText;
       this.isText ? this.eyeIcon = "fa-eye" : this.eyeIcon = "fa-eye-slash";

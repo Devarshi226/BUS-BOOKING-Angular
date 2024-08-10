@@ -10,6 +10,7 @@ import { ForgotComponent } from './login-signup/forgot/forgot.component';
 import { ErrorComponent } from './Components/error/error.component';
 import { BusSearchDataComponent } from './Components/bus-search-data/bus-search-data.component';
 import { SeatSelectionComponent } from './Components/seat-selection/seat-selection.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path:'header', component:HeaderComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'forgot', component:ForgotComponent},
   {path:'error', component:ErrorComponent},
   {path:'search', component:BusSearchDataComponent},
-  {path:'seatselaction', component:SeatSelectionComponent},
+  {path:'seat-selaction', component:SeatSelectionComponent , canActivate: [authGuard]},
+  {path:'seatselaction', component:SeatSelectionComponent}
   { path: '**', redirectTo: '/error' }
 
 ];
