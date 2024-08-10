@@ -9,6 +9,7 @@ import { SignupComponent } from './login-signup/signup/signup.component';
 import { ForgotComponent } from './login-signup/forgot/forgot.component';
 import { ErrorComponent } from './Components/error/error.component';
 import { BusSearchDataComponent } from './Components/bus-search-data/bus-search-data.component';
+import { SeatSelectionComponent } from './Components/seat-selection/seat-selection.component';
 
 const routes: Routes = [
   {path:'header', component:HeaderComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:'forgot', component:ForgotComponent},
   {path:'error', component:ErrorComponent},
   {path:'search', component:BusSearchDataComponent},
+  {path:'seat-selaction', component:SeatSelectionComponent},
   { path: '**', redirectTo: '/error' }
 
 ];

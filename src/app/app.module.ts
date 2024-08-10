@@ -20,6 +20,8 @@ import { ErrorComponent } from './Components/error/error.component';
 import { BusSearchDataComponent } from './Components/bus-search-data/bus-search-data.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
+import { SeatSelectionComponent } from './Components/seat-selection/seat-selection.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {MatDividerModule} from '@angular/material/divider';
     SignupComponent,
     ForgotComponent,
     ErrorComponent,
-    BusSearchDataComponent
+    BusSearchDataComponent,
+    SeatSelectionComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],
