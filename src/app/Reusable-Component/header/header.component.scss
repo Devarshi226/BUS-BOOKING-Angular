@@ -2,6 +2,10 @@
   background-color: var(--secondary-color);
   border: 1px solid var(--primary-color);
 }
+.heading{
+  color: var( --primary-color);
+  margin-top: 35px;
+}
 .login {
   background-color: var(--primary-color);
   color: var(--text-color);
@@ -25,13 +29,15 @@ li {
   list-style: none;
 }
 .menu {
-
+  color: var(--text-color);
   background-color: var(--primary-color);
 }
 .menu ul li {
   padding: 10px 20px;
   display: inline-block;
-  color: #fff;
+  // color: #fff;
   cursor: pointer;
+  color: var(--text-color);
+  background-color: var(--primary-color);
 }
 

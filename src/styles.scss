@@ -30,23 +30,42 @@ body {
   transition: background-color 0.3s ease;
 }
 
+// :root {
+//   --background-color: #ffffff;
+//   --text-color: #ffffff;
+//   --primary-color: #1366d9;
+//   --secondary-color: #f3f4f6;
+//   /* Add more variables as needed */
+// }
+
+// /* Dark theme */
+// .dark-theme {
+//   --background-color: #121212;
+//   --text-color: #121212;
+//   --primary-color: #F9DBBA;
+//   --secondary-color: #1f1f1f;
+//   /* Add more variables as needed */
+// }
+
 :root {
   --background-color: #ffffff;
-  --text-color: #ffffff;
-  --primary-color: #1366d9;
-  --secondary-color: #f3f4f6;
-  /* Add more variables as needed */
+  --text-color: #ffffff; /* Changed to a darker shade for better readability */
+  --primary-color: #1366d9; /* Blue shade for light mode */
+  --secondary-color: #f3f4f6; /* Light grey for background */
+  --icon-color: #1366d9; /* Matching the primary color */
+  --card-background-color: #f9f9f9;
+  --second-text-color:#121212; /* Light grey for card background */
 }
 
-/* Dark theme */
 .dark-theme {
   --background-color: #121212;
-  --text-color: #ffffff;
-  --primary-color: #bb86fc;
-  --secondary-color: #1f1f1f;
-  /* Add more variables as needed */
+  --text-color: #121212; /* Light grey for better readability */
+  --primary-color: #F9DBBA; /* Warm beige for dark mode */
+  --secondary-color: #1f1f1f; /* Dark grey for background */
+  --icon-color: #F9DBBA; /* Matching the primary color */
+  --card-background-color: #696767; /* Dark grey for card background */
+  --second-text-color:#ffffff;
 }
-
 
 body {
   background-color: var(--background-color);

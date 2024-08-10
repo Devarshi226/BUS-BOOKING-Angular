@@ -1,42 +1,83 @@
-form{
-  padding: 20px;
-  box-shadow:  3px 3px 5px 6px #ccc;
+.seat-selection-container {
+  text-align: center;
 }
 
-.total{
-  padding: 4px;
-  margin: 4px;
-}
-.seatstable{
-  min-height: 300px;
+.seat-layout {
+  display: inline-block;
+  margin: 20px 0;
 }
 
-.seatCheckbox{
-  margin-left: 20px;
-}
-.seatCheckbox input[type="checkbox"] {
-  display: none;
-}
-
-.seatCheckbox span:before {
-  width: 1em;
-  height: 1em;
-  content: url('../../../assets/car\ seat.jpg');
-  margin-right: .3em;
+.seat-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
-.seatCheckbox input[type="checkbox"]:checked ~ span:before {
-  content: url('../../../assets/car\ seat.jpg');
+.seat {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid var(--primary-color);
+  transition: background-color 0.3s ease;
 }
 
-.seatCheckbox input[type="checkbox"]:disabled ~ span:before {
-  content: url('../../../assets/car\ seat.jpg');
+.occupied {
+  background-color: #ff6b6b;
+  cursor: not-allowed;
 }
 
-.alert{
-  height: 80px;
+.selected {
+  background-color: #4caf50;
+  color: white;
 }
 
-.btn-block{
-  max-width: 250px;
+.driver {
+  background-color: #ffa726;
+  cursor: default;
+}
+
+.seat-info {
+  margin-top: 20px;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 8px 16px;
+  text-align: left;
+}
+
+td:first-child {
+  font-weight: bold;
+}
+
+.selected-seats {
+  margin-top: 20px;
+}
+
+.selected-seats ul {
+  list-style: none;
+  padding: 0;
+}
+
+.selected-seats li {
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.error-message {
+  color: #ff6b6b;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-left: 800px;
 }

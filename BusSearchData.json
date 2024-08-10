@@ -1,16 +1,28 @@
 {
   "BusSearchData": [
     {
-      "id": "4df8",
+      "id": "79cc",
       "departure": "ahmedabad",
       "destination": "surat",
-      "date": "2024-08-16"
+      "date": "2024-08-17"
     },
     {
-      "id": "5fac",
+      "id": "c13a",
+      "departure": "ahmedabad",
+      "destination": "surat",
+      "date": "2024-08-17"
+    },
+    {
+      "id": "d96d",
+      "departure": "ahmedabad",
+      "destination": "surat",
+      "date": "2024-08-18"
+    },
+    {
+      "id": "6dda",
       "departure": "surat",
-      "destination": "rajkot",
-      "date": "2024-08-21"
+      "destination": "ahmedabad",
+      "date": "2024-08-11"
     }
   ]
 }
