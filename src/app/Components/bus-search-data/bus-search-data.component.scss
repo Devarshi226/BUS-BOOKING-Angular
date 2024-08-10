@@ -121,13 +121,14 @@
   border-collapse: collapse;
   margin: 20px auto;
   font-size: 16px;
+  border-radius: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .table th {
-  background-color: #0056b3; /* Your main color */
-  color: #ffffff;
+  background-color: var(--primary-color); /* Your main color */
+  color: var(--text-color);
   text-align: left;
 }
 
@@ -137,7 +138,7 @@
 }
 
 .table tbody tr {
-  background-color: #ffffff;
+  background-color: var(--primary-color);
   position: relative; /* For the ::after pseudo-element */
   transition: background-color 0.3s ease;
 }
@@ -159,11 +160,12 @@
 }
 
 .table tbody tr:hover::after {
-  background-color: #0056b3; /* Blue line on hover */
+  background-color: var(--primary-color); /* Blue line on hover */
 }
 
 .table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: var(--backgroungd-color);
+  color: var(--second-text-color);
 }
 
 .table tbody tr:nth-child(even):hover {
@@ -173,28 +175,12 @@
 .table th {
   font-weight: 600;
 }
+.table tr{
+  background-color: var(--backgroungd-color);
+}
 
 .table td {
   font-weight: 400;
-}
-
-.view-seats-btn {
-  background-color: #0056b3;
-  color: #ffffff;
-  border: none;
-  padding: 8px 12px;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.view-seats-btn:hover {
-  background-color: #004494;
-}
-
-.view-seats-btn:focus {
-  outline: none;
 }
 
 @media (max-width: 600px) {
