@@ -36,7 +36,7 @@ export class HomepageComponent  implements OnInit {
   ];
   filteredPlaces: { key: string, value: string }[] = [...this.places];
 
-  constructor(private fb: FormBuilder, private search:SearchService, private route:Router, private sharedData:DataShareService) {
+  constructor(private fb: FormBuilder, private search:SearchService, private route:Router, private DataShareService:DataShareService) {
     this.searchForm = this.fb.group({
       departure: ['', Validators.required],
       destination: ['', Validators.required],
@@ -78,7 +78,7 @@ export class HomepageComponent  implements OnInit {
         }
       );
 
-      this.sharedData.setSeat(this.searchForm.get('passengers')?.value);
+      this.DataShareService.setSeat(this.searchForm.get('passengers')?.value);
 
     }
       console.log(this.searchForm.value);
