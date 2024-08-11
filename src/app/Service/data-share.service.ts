@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,12 @@ export class DataShareService {
 
   constructor() { }
 
+  private setSubject = new BehaviorSubject<any>(null);
+
+  public setSubject$ = this.setSubject.asObservable();
+
   setSeat(seat: number){
-    this.seat = seat;
+    this.setSubject.next(seat);
   }
 
 }

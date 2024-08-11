@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DataShareService } from 'src/app/Service/data-share.service';
 
 
 @Component({
@@ -6,7 +7,20 @@ import { Component, Input } from '@angular/core';
   templateUrl: './seat-selection.component.html',
   styleUrls: ['./seat-selection.component.scss']
 })
-export class SeatSelectionComponent  {
+export class SeatSelectionComponent  implements OnInit {
+
+  constructor(private DataShareService:DataShareService ) { }
+
+  ngOnInit(): void {
+
+    this.DataShareService.setSubject$.subscribe((data) => {
+      console.log(data);
+    }
+  );
+
+  }
+
+
   seats = [
     [
       { number: 'A1', occupied: false },
