@@ -22,8 +22,7 @@ const routes: Routes = [
   {path:'forgot', component:ForgotComponent},
   {path:'error', component:ErrorComponent},
   {path:'search', component:BusSearchDataComponent},
-  {path:'seat-selaction', component:SeatSelectionComponent , canActivate: [authGuard]},
-  {path:'seatselaction', component:SeatSelectionComponent}
+  {path:'seatselaction', component:SeatSelectionComponent, canActivate: [authGuard] },
   { path: '**', redirectTo: '/error' }
 
 ];
