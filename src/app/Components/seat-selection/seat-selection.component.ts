@@ -9,6 +9,16 @@ import { DataShareService } from 'src/app/Service/data-share.service';
 })
 export class SeatSelectionComponent  implements OnInit {
 
+  maxSeats: number = 1; // Default to 1 seat
+  selectedSeats: number[] = [];
+  showErrorMessage = false;
+
+
+  busType = 'AC Sleeper';
+  fare = 500;
+  totalFare: number = 0;
+
+
   constructor(private DataShareService:DataShareService ) { }
 
   ngOnInit(): void {
@@ -18,7 +28,7 @@ export class SeatSelectionComponent  implements OnInit {
       if(data){
         this.maxSeats = data;
       }else{
-        this.maxSeats = 1;
+        this.maxSeats = 4;
       }
     }
   );
@@ -26,10 +36,8 @@ export class SeatSelectionComponent  implements OnInit {
   }
 
 
-  showErrorMessage = false;
 
-  busType = 'AC Sleeper';
-  fare = 500;
+
 
   selectSeat(seat: any) {
     if (this.selectedSeats.length < this.maxSeats) {
@@ -45,8 +53,7 @@ export class SeatSelectionComponent  implements OnInit {
   }
 
 
-  maxSeats: number = 1; // Default to 1 seat
-  selectedSeats: number[] = [];
+
 
   seats = [
     [{ value: 1, disabled: false, selected: false, cursor: false }, { value: 2, disabled: false, selected: false, cursor: false }, { value: 3, disabled: false, selected: false, cursor: false }, { value: 4, disabled: false, selected: false, cursor: false }],
@@ -84,6 +91,7 @@ export class SeatSelectionComponent  implements OnInit {
 
   }
 
+
   onSeatChange(seat: any) {
     if (seat.selected) {
       this.selectedSeats = this.selectedSeats.filter(s => s !== seat.value);
@@ -107,6 +115,7 @@ export class SeatSelectionComponent  implements OnInit {
     });
 
     console.log('Selected Seats:', this.selectedSeats);
+    this.totalFare = this.fare * this.selectedSeats.length ;
   }
 
   protected readonly toString = toString;

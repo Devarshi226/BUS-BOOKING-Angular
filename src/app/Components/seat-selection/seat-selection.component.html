@@ -4,7 +4,7 @@
   <div class="Select-seat-card">
 
     <div class="bus seat2-2  p-0">
-      <div class="bus-head"><img src="assets/steering-wheel.png"></div>
+      <div class="bus-head"><img src="assets/steering.png"></div>
         <div *ngFor="let row of seats; let i = index" class="seat-row-{{ i + 1 }}">
 
           <ol class="seats">
@@ -26,6 +26,21 @@
       </div>
 
     <div class="seat-info" style="color: var(--primary-color);">
+      <div class="info-seats">
+        <div class="for-booked-note">
+          <div class="dot colorBooked"></div>
+          <span>Booked Seat</span>
+        </div>
+        <div class="for-booked-note">
+          <div class="dot colorSelected"></div>
+          <span>Selected Seat</span>
+        </div>
+        <div class="for-booked-note">
+          <div class="dot colorAvailable"></div>
+          <span>Available Seat</span>
+        </div>
+
+      </div>
       <h4>Bus Information</h4>
       <table>
         <tr>
@@ -33,24 +48,17 @@
           <td>{{ busType }}</td>
         </tr>
         <tr>
-          <td>Fare:</td>
-          <td>{{ fare | currency }}</td>
+          <td>Selected Seats:</td>
+          <td>{{ selectedSeats.length }}/4</td>
         </tr>
+        <tr>
+          <td>Fare:</td>
+          <td>{{ totalFare | currency }}</td>
+        </tr>
+
       </table>
     </div>
 
-  </div>
-  <div>
-    <p>Notes</p>
-    <div class="dot colorRed" alt="Status Indicator: Significant Delays"></div>
-    <span>Significant Delays</span>
-
-
-  </div>
-
-
-  <div class="selected-seats">
-    <h4 style="color: var(--primary-color);">Selected Seats: {{ selectedSeats.length }}/4</h4>
   </div>
 </div>
 <div class="button-container">

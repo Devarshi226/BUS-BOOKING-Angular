@@ -52,7 +52,10 @@
 }
 
 .seat-info {
-  margin-top: 20px;
+  // margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 table {
@@ -211,28 +214,36 @@ body {
 }
 
 
+.info-seats{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+}
 
 
-
-// .colorYellow {
-//   background-color: #EE5;
-// }
-// .colorGreen {
-//   background-color: #2B2;
-// }
-.colorRed {
-  background-color: #E33;
+.colorSelected {
+  background-color: $brand-success;
+}
+.colorAvailable {
+  background-color: $primary-color;
+}
+.colorBooked {
+  background-color: $brand-danger;
 }
 .dot {
   transform: scale(1.6,1.6);
-  height: 28px;
-  width: 28px;
+  height: 8px;
+  width: 8px;
   border-radius: 50%;
   float: left;
   margin: 19px 1em;
-  border: 2px solid #333;
-  text-align: center;
-  font-weight: 700;
+  border: 1px solid #333;
   text-rendering: optimizeLegibility;
   cursor: default;
+}
+
+.for-booked-note{
+  display: flex;
+  align-items: center;
 }
