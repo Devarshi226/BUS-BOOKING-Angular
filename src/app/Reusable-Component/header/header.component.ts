@@ -16,4 +16,18 @@ export class HeaderComponent {
   localStorage.removeItem('token');
   localStorage.removeItem('email');
   }
+
+  ngOnInit(): void {
+
+
+
+  }
+
+  checkLogin(){
+    if(localStorage.getItem('token')){
+      this.isLogin = true;
+    }else{
+      this.isLogin = false;
+    }
+  }
 }

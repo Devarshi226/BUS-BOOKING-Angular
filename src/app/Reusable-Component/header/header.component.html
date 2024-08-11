@@ -7,9 +7,9 @@
         </div>
         <div class="col-md-6">
           <p>
-            <span class="login" (click)="onLogout()" *ngIf="!isLogin">Log Out</span>
-            <span class="login" routerLink="/login" *ngIf="isLogin"> Login</span>
-            <span class="login" routerLink="/signup" *ngIf="isLogin"> Sign Up</span>
+            <span class="login" (click)="onLogout()" *ngIf="isLogin">Log Out</span>
+            <span class="login" routerLink="/login" *ngIf="!isLogin"> Login</span>
+            <span class="login" routerLink="/signup" *ngIf="!isLogin"> Sign Up</span>
 
           </p>
           <!-- <p>
@@ -40,3 +40,5 @@
 </div>
 
 </div>
+
+<div style="display: none">{{checkLogin()}}</div>
