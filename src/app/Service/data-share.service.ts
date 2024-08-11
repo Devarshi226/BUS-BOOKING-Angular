@@ -10,6 +10,8 @@ export class DataShareService {
 
   constructor() { }
 
+
+  // Seats
   private setSubject = new BehaviorSubject<any>(null);
 
   public setSubject$ = this.setSubject.asObservable();
@@ -17,5 +19,51 @@ export class DataShareService {
   setSeat(seat: number){
     this.setSubject.next(seat);
   }
+
+
+
+  // Bus Type
+  private setBusTypeSubject = new BehaviorSubject<any>(null);
+
+  public setBusTypeSubject$ = this.setBusTypeSubject.asObservable();
+
+  setBusType(busType: string){
+    this.setBusTypeSubject.next(busType);
+  }
+
+
+  // Fare
+  private setFareSubject = new BehaviorSubject<any>(null);
+
+  public setFareSubject$ = this.setFareSubject.asObservable();
+
+  setFare(fare: number){
+    this.setFareSubject.next(fare);
+  }
+
+
+  // Total Fare
+  private setTotalFareSubject = new BehaviorSubject<any>(null);
+
+  public setTotalFareSubject$ = this.setTotalFareSubject.asObservable();
+
+  setTotalFare(totalFare: number){
+    this.setTotalFareSubject.next(totalFare);
+  }
+
+
+  // Selected Seats
+  private setSelectedSeatsSubject = new BehaviorSubject<any>(null);
+
+  public setSelectedSeatsSubject$ = this.setSelectedSeatsSubject.asObservable();
+
+  setSelectedSeats(selectedSeats: any){
+    this.setSelectedSeatsSubject.next(selectedSeats);
+  }
+
+
+
+
+
 
 }
