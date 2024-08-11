@@ -1,3 +1,4 @@
+import { DataShareService } from './../../Service/data-share.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -35,11 +36,12 @@ export class HomepageComponent  implements OnInit {
   ];
   filteredPlaces: { key: string, value: string }[] = [...this.places];
 
-  constructor(private fb: FormBuilder, private search:SearchService, private route:Router) {
+  constructor(private fb: FormBuilder, private search:SearchService, private route:Router, private DataShareService:DataShareService) {
     this.searchForm = this.fb.group({
       departure: ['', Validators.required],
       destination: ['', Validators.required],
-      date: ['', Validators.required]
+      date: ['', Validators.required],
+      passengers: [1, Validators.required]
     });
   }
 
@@ -47,6 +49,8 @@ export class HomepageComponent  implements OnInit {
     this.searchForm.get('departure')?.valueChanges.subscribe(value => {
       this.filterGoingToOptions(value);
     });
+
+
 
     const today = new Date();
     this.minDate = today.toISOString().split('T')[0];
@@ -73,6 +77,9 @@ export class HomepageComponent  implements OnInit {
           // Handle error response, e.g., show an error message
         }
       );
+
+      this.DataShareService.setSeat(this.searchForm.get('passengers')?.value);
+
     }
       console.log(this.searchForm.value);
       // Handle form submission

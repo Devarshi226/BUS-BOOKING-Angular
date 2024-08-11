@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.Select-seat-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+}
+
+
 .seat-layout {
   display: inline-block;
   margin: 20px 0;
@@ -43,7 +52,10 @@
 }
 
 .seat-info {
-  margin-top: 20px;
+  // margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 table {
@@ -80,4 +92,166 @@ td:first-child {
   font-weight: bold;
   margin-top: 15px;
   margin-left: 800px;
+}
+
+
+
+/* app.component.scss */
+$white: #fff;
+$primary-color: #3783b5;
+$brand-success: #46be8a;
+$brand-danger: #d32424;
+
+body {
+  padding: 15px;
+}
+
+.bus {
+  border: 3px solid #020202;
+  width: 15%;
+  padding: 0.5rem;
+  border-radius: 15px;
+
+
+
+  &.seat2-3,
+  &.seat2-2 {
+    .seats {
+      .seat {
+        &:nth-child(2) {
+          margin-right: 14.28571428571429%;
+        }
+      }
+    }
+  }
+
+  &.seat3-2 {
+    .seats {
+      .seat {
+        &:nth-child(3) {
+          margin-right: 14.28571428571429%;
+        }
+      }
+    }
+  }
+}
+
+.seats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center !important;
+  padding: 0;
+  margin-bottom: 2px;
+
+  .seat {
+    display: flex;
+    flex: 0 0 14.28571428571429%;
+    padding: 3px;
+    position: relative;
+
+
+    label {
+      border-radius: 4px;
+      background: $primary-color;
+      padding: 0;
+      width: 25px;
+      height: 25px;
+      margin-bottom: 0.1rem;
+      display: inline-block;
+      font-size: 0.7rem;
+    }
+
+
+
+    input[type="checkbox"] {
+      display: none !important;
+
+      + label {
+        border-radius: 4px;
+        background: $primary-color;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        padding: 4px;
+        color: $white;
+      }
+
+
+      &:checked + label {
+        background: $brand-success;
+      }
+
+      &:disabled.selected + label {
+        cursor: not-allowed;
+        background: $brand-danger;
+      }
+
+
+      &:disabled:not(.selected) + label {
+        cursor: not-allowed;
+      }
+    }
+
+
+
+  }
+}
+
+.dis {
+  background: $brand-danger !important;
+  cursor: not-allowed !important;
+}
+
+.bus-head{
+  display: flex;
+  justify-content: flex-end;
+    img{
+      width: 25px;
+      margin-right: 40px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+    }
+}
+
+
+.info-seats{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+}
+
+
+.colorSelected {
+  background-color: $brand-success;
+}
+.colorAvailable {
+  background-color: $primary-color;
+}
+.colorBooked {
+  background-color: $brand-danger;
+}
+.dot {
+  transform: scale(1.6,1.6);
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  float: left;
+  margin: 19px 1em;
+  border: 1px solid #333;
+  text-rendering: optimizeLegibility;
+  cursor: default;
+}
+
+.for-booked-note{
+  display: flex;
+  align-items: center;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }

@@ -1,40 +1,10 @@
-<!-- <div class="overlap"></div>
-<div class="container">
-  <div class="row justify-content-center pb-5 pt-3" >
-    <div class="col-md-5 block mt-3"> -->
-<!-- <form [formGroup]="searchForm">
-        <div class="row">
-          <div class="form-group col-md-6">
-            <label>From</label>
-            <select  name="leaving_form" class="form-control form-control-sm" formControlName="leaving_from" >
-              <option value="">Select Place</option>
-              <option *ngFor="let place of places" [value]="place.key">{{ place.value }}</option>
-            </select>
-          </div>
-          <div class="form-group col-md-6">
-            <label> To</label>
-            <select name="going_to" class="form-control form-control-sm" formControlName="going_to">
-              <option value="">Select Place</option>
-              <option *ngFor="let place of filteredPlaces" [value]="place.key">{{ place.value }}</option>
-            </select>
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-12">
-            <label for="">Departing On</label>
-            <input type="date" class="form-control form-control-sm" name="depart_date" formControlName="depart_date">
-          </div>
-        </div>
-        <button [disabled]="searchForm.invalid" class="btn btn-block mt-3 btn-search btn-sm" (click)="onSubmit()">
-          <i class="fas mr-2 fa-search"></i> Search Buses
-        </button>
-      </form> -->
+
       <app-header></app-header>
       <div class="container">
         <div class="homePage">
           <form [formGroup]="searchForm">
             <div class="row align-items-end">
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-3">
                 <label style="color: var(--second-text-color);"><i class="fa fa-bus" aria-hidden="true"></i> From</label>
                 <select name="leaving_from" class="form-control form-control-sm custom-select" formControlName="departure" style="color: var(--second-text-color);">
                   <option value=""><b>Select Place</b></option>
@@ -42,19 +12,25 @@
                 </select>
               </div>
               <div class="form-group col-md-1 icon-wrapper">
-                <ion-icon name="swap-horizontal"  (click)="swapCities()"></ion-icon>
+                <ion-icon name="swap-horizontal" (click)="swapCities()"></ion-icon>
               </div>
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-3">
                 <label style="color: var(--second-text-color);"><i class="fa fa-bus" aria-hidden="true"></i> To</label>
                 <select name="going_to" class="form-control form-control-sm custom-select" formControlName="destination" style="color: var(--second-text-color);">
                   <option value=""><b>Select Place</b></option>
                   <option *ngFor="let place of filteredPlaces" [value]="place.key">{{ place.value }}</option>
                 </select>
               </div>
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-2">
                 <label style="color: var(--second-text-color);">Departing On</label>
-                <input type="date" class="form-control form-control-sm custom-date" name="depart_date" formControlName="date"  [min]="minDate" style="color: var(--second-text-color);">
+                <input type="date" class="form-control form-control-sm custom-date" name="depart_date" formControlName="date" [min]="minDate" style="color: var(--second-text-color);">
               </div>
+              <div class="form-group col-md-2">
+                <label style="color: var(--second-text-color);">Select Seats</label>
+                <select class="form-control form-control-sm custom-date" name="depart_date" formControlName="passengers" style="color: var(--second-text-color);">
+                  <option *ngFor="let value of [1, 2, 3, 4]" [value]="value">{{ value }}</option>
+              </select>
+                            </div>
             </div>
           </form>
         </div>
@@ -64,19 +40,5 @@
           </button>
         </div>
       </div>
-
-      <!-- <div *ngIf="buses.length > 0">
-        <h3>Available Buses</h3>
-        <ul>
-          <li *ngFor="let bus of buses">
-            {{ bus.name }} - {{ bus.departureTime }} to {{ bus.arrivalTime }} - ${{ bus.fare }}
-          </li>
-        </ul>
-      </div> -->
       <app-footer></app-footer>
-<!-- </div> -->
-<!-- <div class="col-md-5 slider mt-3 ">
-      <img src="../../../assets/redBus-coupons-offers-1586.png" class="img-fluid">
-    </div> -->
-<!-- </div>
-</div> -->
+
