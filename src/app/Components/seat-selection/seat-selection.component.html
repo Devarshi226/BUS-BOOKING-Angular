@@ -1,44 +1,54 @@
 <app-header></app-header>
 <div class="seat-selection-container">
   <h3 style="color: var(--primary-color);" class="mt-3">Select Your Seats</h3>
-  <div class="seat-layout">
-    <div *ngFor="let row of seats; let rowIndex = index" class="seat-row">
-      <div *ngFor="let seat of row; let seatIndex = index"
-           [ngClass]="{
-             'seat': true,
-             'occupied': seat.occupied,
-             'selected': isSelected(seat),
-             'driver': seat.isDriverSeat
-           }"
-           (click)="selectSeat(rowIndex, seatIndex)">
-        <ng-container *ngIf="seat.isDriverSeat; else normalSeat">
-          <i class="fa fa-steering-wheel" aria-hidden="true"></i>
-        </ng-container>
-        <ng-template #normalSeat>
-          <span>{{ seat.number }}</span>
-        </ng-template>
-      </div>
+  <div class="Select-seat-card">
+
+
+    <div class="seat-info" style="color: var(--primary-color);">
+      <h4>Bus Information</h4>
+      <table>
+        <tr>
+          <td>Bus Type:</td>
+          <td>{{ busType }}</td>
+        </tr>
+        <tr>
+          <td>Fare:</td>
+          <td>{{ fare | currency }}</td>
+        </tr>
+      </table>
     </div>
+
+    <div class="bus seat2-2 border-0 p-0">
+      <div class="bus-head"><img src="assets/wheel.png"></div>
+        <div *ngFor="let row of seats; let i = index" class="seat-row-{{ i + 1 }}">
+
+          <ol class="seats">
+            <li *ngFor="let seat of row" class="seat">
+              <input
+                role="input-passenger-seat"
+                [id]="'seat-checkbox-' + (i + 1) + '-' + seat.value"
+                [value]="seat.value"
+                type="checkbox"
+                [disabled]="seat?.cursor"
+                (change)="onSeatChange(seat)"
+              />
+              <label [for]="'seat-checkbox-' + (i + 1) + '-' + seat.value" [ngClass]="{ 'dis' : seat.disabled }">
+                {{ seat.value }}
+              </label>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+
   </div>
 
-  <div class="seat-info" style="color: var(--primary-color);">
-    <h4>Bus Information</h4>
-    <table>
-      <tr>
-        <td>Bus Type:</td>
-        <td>{{ busType }}</td>
-      </tr>
-      <tr>
-        <td>Fare:</td>
-        <td>{{ fare | currency }}</td>
-      </tr>
-    </table>
-  </div>
+
 
   <div class="selected-seats">
     <h4 style="color: var(--primary-color);">Selected Seats: {{ selectedSeats.length }}/4</h4>
     <ul>
-      <li *ngFor="let seat of selectedSeats">{{ seat.number }}</li>
+      <li *ngFor="let seat of selectedSeats">{{ seat }}</li>
     </ul>
   </div>
 </div>

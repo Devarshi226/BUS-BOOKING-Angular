@@ -1,83 +1,200 @@
-.seat-selection-container {
-  text-align: center;
+// .seat-selection-container {
+//   text-align: center;
+// }
+
+// .seat-layout {
+//   display: inline-block;
+//   margin: 20px 0;
+// }
+
+// .seat-row {
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 10px;
+// }
+
+// .seat {
+//   width: 40px;
+//   height: 40px;
+//   margin: 5px;
+//   background-color: var(--secondary-color);
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+//   border-radius: 5px;
+//   border: 2px solid var(--primary-color);
+//   transition: background-color 0.3s ease;
+// }
+
+// .occupied {
+//   background-color: #ff6b6b;
+//   cursor: not-allowed;
+// }
+
+// .selected {
+//   background-color: #4caf50;
+//   color: white;
+// }
+
+// .driver {
+//   background-color: #ffa726;
+//   cursor: default;
+// }
+
+// .seat-info {
+//   margin-top: 20px;
+// }
+
+// table {
+//   margin: 0 auto;
+//   border-collapse: collapse;
+// }
+
+// td {
+//   padding: 8px 16px;
+//   text-align: left;
+// }
+
+// td:first-child {
+//   font-weight: bold;
+// }
+
+// .selected-seats {
+//   margin-top: 20px;
+// }
+
+// .selected-seats ul {
+//   list-style: none;
+//   padding: 0;
+// }
+
+// .selected-seats li {
+//   display: inline-block;
+//   margin-right: 10px;
+//   font-weight: bold;
+//   color: var(--primary-color);
+// }
+// .error-message {
+//   color: #ff6b6b;
+//   font-weight: bold;
+//   margin-top: 15px;
+//   margin-left: 800px;
+// }
+
+
+
+/* app.component.scss */
+$white: #fff;
+$primary-color: #3783b5;
+$brand-success: #46be8a;
+$brand-danger: #d32424;
+
+body {
+  padding: 15px;
 }
 
-.seat-layout {
-  display: inline-block;
-  margin: 20px 0;
+.bus {
+  border: 1px solid #ddd;
+  width: 15%;
+  padding: 0.5rem;
+  border-radius: 4px;
+
+  &.seat2-3,
+  &.seat2-2 {
+    .seats {
+      .seat {
+        &:nth-child(2) {
+          margin-right: 14.28571428571429%;
+        }
+      }
+    }
+  }
+
+  &.seat3-2 {
+    .seats {
+      .seat {
+        &:nth-child(3) {
+          margin-right: 14.28571428571429%;
+        }
+      }
+    }
+  }
 }
 
-.seat-row {
+.seats {
   display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.seat {
-  width: 40px;
-  height: 40px;
-  margin: 5px;
-  background-color: var(--secondary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 5px;
-  border: 2px solid var(--primary-color);
-  transition: background-color 0.3s ease;
-}
-
-.occupied {
-  background-color: #ff6b6b;
-  cursor: not-allowed;
-}
-
-.selected {
-  background-color: #4caf50;
-  color: white;
-}
-
-.driver {
-  background-color: #ffa726;
-  cursor: default;
-}
-
-.seat-info {
-  margin-top: 20px;
-}
-
-table {
-  margin: 0 auto;
-  border-collapse: collapse;
-}
-
-td {
-  padding: 8px 16px;
-  text-align: left;
-}
-
-td:first-child {
-  font-weight: bold;
-}
-
-.selected-seats {
-  margin-top: 20px;
-}
-
-.selected-seats ul {
-  list-style: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center !important;
   padding: 0;
+  margin-bottom: 2px;
+
+  .seat {
+    display: flex;
+    flex: 0 0 14.28571428571429%;
+    padding: 3px;
+    position: relative;
+
+
+    label {
+      border-radius: 4px;
+      background: $primary-color;
+      padding: 0;
+      width: 25px;
+      height: 25px;
+      margin-bottom: 0.1rem;
+      display: inline-block;
+      font-size: 0.7rem;
+    }
+
+
+
+    input[type="checkbox"] {
+      display: none !important;
+
+      + label {
+        border-radius: 4px;
+        background: $primary-color;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        padding: 4px;
+        color: $white;
+      }
+
+
+      &:checked + label {
+        background: $brand-success;
+      }
+
+      &:disabled.selected + label {
+        cursor: not-allowed;
+        background: $brand-danger;
+      }
+
+
+      &:disabled:not(.selected) + label {
+        cursor: not-allowed;
+      }
+    }
+
+
+
+  }
 }
 
-.selected-seats li {
-  display: inline-block;
-  margin-right: 10px;
-  font-weight: bold;
-  color: var(--primary-color);
+.dis {
+  background: $brand-danger !important;
+  cursor: not-allowed !important;
 }
-.error-message {
-  color: #ff6b6b;
-  font-weight: bold;
-  margin-top: 15px;
-  margin-left: 800px;
+
+.bus-head{
+  display: flex;
+  justify-content: flex-end;
+    img{
+      width: 25px;
+      margin-right: 40px;
+
+    }
 }
