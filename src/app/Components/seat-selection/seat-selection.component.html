@@ -3,22 +3,7 @@
   <h3 style="color: var(--primary-color);" class="mt-3">Select Your Seats</h3>
   <div class="Select-seat-card">
 
-
-    <div class="seat-info" style="color: var(--primary-color);">
-      <h4>Bus Information</h4>
-      <table>
-        <tr>
-          <td>Bus Type:</td>
-          <td>{{ busType }}</td>
-        </tr>
-        <tr>
-          <td>Fare:</td>
-          <td>{{ fare | currency }}</td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="bus seat2-2 border-0 p-0">
+    <div class="bus seat2-2  p-0">
       <div class="bus-head"><img src="assets/wheel.png"></div>
         <div *ngFor="let row of seats; let i = index" class="seat-row-{{ i + 1 }}">
 
@@ -40,19 +25,37 @@
         </div>
       </div>
 
+    <div class="seat-info" style="color: var(--primary-color);">
+      <h4>Bus Information</h4>
+      <table>
+        <tr>
+          <td>Bus Type:</td>
+          <td>{{ busType }}</td>
+        </tr>
+        <tr>
+          <td>Fare:</td>
+          <td>{{ fare | currency }}</td>
+        </tr>
+      </table>
+    </div>
 
   </div>
+  <div>
+    <p>Notes</p>
+    <div class="dot colorRed" alt="Status Indicator: Significant Delays"></div>
+    <span>Significant Delays</span>
 
+
+  </div>
 
 
   <div class="selected-seats">
     <h4 style="color: var(--primary-color);">Selected Seats: {{ selectedSeats.length }}/4</h4>
-    <ul>
-      <li *ngFor="let seat of selectedSeats">{{ seat }}</li>
-    </ul>
   </div>
 </div>
-
+<div class="button-container">
+  <button class="btn btn-primary">Continue</button>
+</div>
 <div *ngIf="showErrorMessage" class="error-message">
   You can select a maximum of 4 seats.
 </div>

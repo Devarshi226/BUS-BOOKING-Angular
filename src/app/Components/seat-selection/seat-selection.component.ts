@@ -15,6 +15,11 @@ export class SeatSelectionComponent  implements OnInit {
 
     this.DataShareService.setSubject$.subscribe((data) => {
       console.log(data);
+      if(data){
+        this.maxSeats = data;
+      }else{
+        this.maxSeats = 1;
+      }
     }
   );
 
