@@ -14,7 +14,7 @@ import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path:'header', component:HeaderComponent},
-  {path:'seatselaction', component:HomepageComponent},
+  {path:'', component:HomepageComponent},
   {path:'footer', component:FooterComponent},
   {path:'bus-schedule', component:BusScheduleComponent},
   {path:'login', component:LoginComponent},
@@ -22,7 +22,7 @@ const routes: Routes = [
   {path:'forgot', component:ForgotComponent},
   {path:'error', component:ErrorComponent},
   {path:'search', component:BusSearchDataComponent},
-  {path:'', component:SeatSelectionComponent, canActivate: [authGuard] },
+  {path:'seatselaction', component:SeatSelectionComponent, canActivate: [authGuard] },
   { path: '**', redirectTo: '/error' }
 
 ];

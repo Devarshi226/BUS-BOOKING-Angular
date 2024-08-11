@@ -28,7 +28,7 @@ export class SeatSelectionComponent  implements OnInit {
       if(data){
         this.maxSeats = data;
       }else{
-        this.maxSeats = 4;
+        this.maxSeats = 3;
       }
     }
   );
