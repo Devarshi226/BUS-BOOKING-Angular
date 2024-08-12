@@ -26,7 +26,8 @@
       <td>{{ bus.seats }}</td>
       <td>{{ bus.fare }}</td>
       <td>
-        <button type="button" class="btn btn-secondary" routerLink="/seatselaction">View Seats</button>
+        <!-- <button type="button" class="btn btn-secondary" routerLink="/seatselaction">View Seats</button> -->
+        <button type="button" class="btn btn-secondary" (click)="viewSeats(bus)">View Seats</button>
       </td>
     </tr>
   </tbody>

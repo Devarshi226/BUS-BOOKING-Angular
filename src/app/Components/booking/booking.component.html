@@ -1,0 +1,45 @@
+<div class="booking-page">
+  <h3>Booking Summary</h3>
+
+  <div class="bus-details">
+    <p><strong>Bus Name:</strong> {{busName}}</p>
+    <p><strong>Departure:</strong> {{departureTime}}</p>
+    <p><strong>Arrival:</strong> {{arrivalTime}}</p>
+    <p><strong>Coach Type:</strong> {{busType}}</p>
+  </div>
+
+  <div class="selected-seats">
+    <h4>Selected Seats</h4>
+    <ul>
+      <li *ngFor="let seat of selectedSeats">Seat {{seat}}</li>
+    </ul>
+  </div>
+
+  <div class="passenger-info">
+    <h4>Passenger Information</h4>
+    <form [formGroup]="bookingForm">
+      <div *ngFor="let passenger of passengers.controls; let i = index" [formGroupName]="i">
+        <h5>Passenger {{i + 1}}</h5>
+        <div class="form-group">
+          <label for="name-{{i}}">Name:</label>
+          <input id="name-{{i}}" type="text" formControlName="name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="age-{{i}}">Age:</label>
+          <input id="age-{{i}}" type="number" formControlName="age" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="contact-{{i}}">Contact:</label>
+          <input id="contact-{{i}}" type="text" formControlName="contact" class="form-control">
+        </div>
+      </div>
+
+      <div class="payment-summary mt-4">
+        <h4>Total Fare: {{totalFare | currency:'INR'}}</h4>
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-4" [disabled]="bookingForm.invalid">Confirm Booking</button>
+    </form>
+  </div>
+</div>
+
