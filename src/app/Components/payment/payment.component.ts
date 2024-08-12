@@ -22,6 +22,23 @@ export class PaymentComponent {
     });
   }
 
+
+  validateCVV(event: any) {
+    const input = event.target.value;
+    event.target.value = input.replace(/[^0-9]/g, '').slice(0, 3);
+  }
+
+  validateExpiry(event: any) {
+    const input = event.target.value;
+    event.target.value = input.replace(/[^0-9]/g, '').slice(0, 2);
+  }
+
+  validateCardNumber(event: any) {
+    const input = event.target.value;
+    event.target.value = input.replace(/[^0-9]/g, '').slice(0, 16);
+  }
+
+
   confirmPayment(): void {
     if (this.paymentForm.valid) {
       const paymentData = this.paymentForm.value;
