@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataShareService } from 'src/app/Service/data-share.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class BookingComponent {
   busType: string = '';
   totalFare: number = 0;
 
-  constructor(private fb: FormBuilder, private dataShareService: DataShareService) {
+  constructor(private fb: FormBuilder, private dataShareService: DataShareService, private router: Router) {
     this.bookingForm = this.fb.group({
       passengers: this.fb.array([])
     });
@@ -78,6 +79,10 @@ export class BookingComponent {
 
       console.log('Booking Confirmed:', bookingData);
       // You can handle further logic here, like sending booking data to the server.
+
+
+    this.dataShareService.setPassengerDetails(bookingData.passengerDetails);
+    this.router.navigate(['/ticket']);
     }
   }
 }
