@@ -154,7 +154,6 @@ export class SeatSelectionComponent  implements OnInit {
 
     this.totalFare = this.fare * this.selectedSeats.length;
 
-    // Update the service with the latest data
     this.DataShareService.setSelectedSeats(this.selectedSeats);
     this.DataShareService.setTotalFare(this.totalFare);
   }

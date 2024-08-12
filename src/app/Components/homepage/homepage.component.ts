@@ -78,10 +78,12 @@ export class HomepageComponent  implements OnInit {
       );
 
       this.DataShareService.setSeat(this.searchForm.get('passengers')?.value);
+      this.DataShareService.setSource(this.searchForm.get('departure')?.value);
+      this.DataShareService.setDestination(this.searchForm.get('destination')?.value);
+      this.DataShareService.setBusDate(this.searchForm.get('date')?.value);
 
     }
       console.log(this.searchForm.value);
-      // Handle form submission
     }
 
 
