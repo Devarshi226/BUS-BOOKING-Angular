@@ -105,6 +105,32 @@ export class SeatSelectionComponent  implements OnInit {
   }
 
 
+  // onSeatChange(seat: any) {
+  //   if (seat.selected) {
+  //     this.selectedSeats = this.selectedSeats.filter(s => s !== seat.value);
+  //     seat.selected = false;
+  //   } else {
+  //     if (this.selectedSeats.length < this.maxSeats) {
+  //       this.selectedSeats.push(seat.value);
+  //       seat.selected = true;
+  //     }
+  //   }
+
+  //   this.seats.forEach(row => {
+  //     row.forEach((seat: any) => {
+  //       if(!seat.selected && (this.selectedSeats.length == this.maxSeats) && !seat.disabled){
+  //         console.log(seat.value)
+  //         seat.cursor = true;
+  //       } else {
+  //         seat.cursor = false
+  //       }
+  //     });
+  //   });
+
+  //   console.log('Selected Seats:', this.selectedSeats);
+  //   this.totalFare = this.fare * this.selectedSeats.length ;
+  // }
+
   onSeatChange(seat: any) {
     if (seat.selected) {
       this.selectedSeats = this.selectedSeats.filter(s => s !== seat.value);
@@ -118,17 +144,19 @@ export class SeatSelectionComponent  implements OnInit {
 
     this.seats.forEach(row => {
       row.forEach((seat: any) => {
-        if(!seat.selected && (this.selectedSeats.length == this.maxSeats) && !seat.disabled){
-          console.log(seat.value)
+        if (!seat.selected && (this.selectedSeats.length === this.maxSeats) && !seat.disabled) {
           seat.cursor = true;
         } else {
-          seat.cursor = false
+          seat.cursor = false;
         }
       });
     });
 
-    console.log('Selected Seats:', this.selectedSeats);
-    this.totalFare = this.fare * this.selectedSeats.length ;
+    this.totalFare = this.fare * this.selectedSeats.length;
+
+    // Update the service with the latest data
+    this.DataShareService.setSelectedSeats(this.selectedSeats);
+    this.DataShareService.setTotalFare(this.totalFare);
   }
 
   protected readonly toString = toString;

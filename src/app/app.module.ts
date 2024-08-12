@@ -26,6 +26,8 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AuthApi } from './environment/authApi';
 import { BookingComponent } from './Components/booking/booking.component';
+import { PaymentComponent } from './Components/payment/payment.component';
+import { TicketComponent } from './Components/ticket/ticket.component';
 
 
 @NgModule({
@@ -42,6 +44,8 @@ import { BookingComponent } from './Components/booking/booking.component';
     BusSearchDataComponent,
     SeatSelectionComponent,
     BookingComponent,
+    PaymentComponent,
+    TicketComponent,
 
   ],
   imports: [

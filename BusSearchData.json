@@ -1,141 +1,18 @@
 {
   "BusSearchData": [
     {
-      "id": "79cc",
+      "id": "66e5",
       "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-17"
-    },
-    {
-      "id": "c13a",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-17"
-    },
-    {
-      "id": "d96d",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-18"
-    },
-    {
-      "id": "6dda",
-      "departure": "surat",
-      "destination": "ahmedabad",
-      "date": "2024-08-11"
-    },
-    {
-      "id": "05a5",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-11"
-    },
-    {
-      "id": "357d",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-11"
-    },
-    {
-      "id": "c922",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-15"
-    },
-    {
-      "id": "f5ea",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-15"
-    },
-    {
-      "id": "0ca4",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-15"
-    },
-    {
-      "id": "6288",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-15"
-    },
-    {
-      "id": "3096",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-13",
-      "passengers": "2"
-    },
-    {
-      "id": "df10",
-      "departure": "surat",
-      "destination": "bhavnagar",
-      "date": "2024-08-14",
-      "passengers": "3"
-    },
-    {
-      "id": "8a80",
-      "departure": "surat",
-      "destination": "ahmedabad",
-      "date": "2024-08-16",
-      "passengers": "4"
-    },
-    {
-      "id": "d5ba",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-13",
-      "passengers": "2"
-    },
-    {
-      "id": "bbd5",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-15",
-      "passengers": "3"
-    },
-    {
-      "id": "727e",
-      "departure": "ahmedabad",
-      "destination": "bhavnagar",
-      "date": "2024-08-21",
-      "passengers": "2"
-    },
-    {
-      "id": "ed1b",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-15",
-      "passengers": "3"
-    },
-    {
-      "id": "987d",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-13",
-      "passengers": "3"
-    },
-    {
-      "id": "f517",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-14",
-      "passengers": "3"
-    },
-    {
-      "id": "4eb1",
-      "departure": "ahmedabad",
-      "destination": "surat",
-      "date": "2024-08-14",
-      "passengers": "2"
-    },
-    {
-      "id": "4067",
-      "departure": "surat",
       "destination": "rajkot",
-      "date": "2024-08-15",
-      "passengers": "2"
+      "date": "2024-08-14",
+      "passengers": 1
+    },
+    {
+      "id": "1535",
+      "departure": "ahmedabad",
+      "destination": "surat",
+      "date": "2024-08-13",
+      "passengers": 1
     }
   ]
 }

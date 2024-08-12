@@ -1,0 +1,32 @@
+.ticket {
+  border: 1px solid #000;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  background: #fff;
+  color: #000;
+
+  h2, h4 {
+    text-align: center;
+  }
+
+  .ticket-header, .ticket-seats, .ticket-passenger-info, .ticket-total-fare {
+    margin-bottom: 20px;
+  }
+
+  .ticket-seats ul, .ticket-passenger-info ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+}
