@@ -33,6 +33,19 @@ export class SeatSelectionComponent  implements OnInit {
     }
   );
 
+  // Retrieve bus type and fare from the service
+  this.DataShareService.setBusTypeSubject$.subscribe((busType) => {
+    if (busType) {
+      this.busType = busType;
+    }
+  });
+
+  this.DataShareService.setFareSubject$.subscribe((fare) => {
+    if (fare) {
+      this.fare = fare;
+    }
+  });
+
   }
 
 
