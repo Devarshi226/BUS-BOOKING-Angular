@@ -1,0 +1,54 @@
+.booking-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+
+  h3, h4, h5 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+
+  .bus-details, .selected-seats, .passenger-info {
+    margin-bottom: 20px;
+    color: black;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input.form-control {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  .payment-summary {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
