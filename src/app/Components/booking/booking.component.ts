@@ -25,10 +25,15 @@ export class BookingComponent {
   }
 
   ngOnInit(): void {
-    this.dataShareService.selectedSeats$.subscribe((seats:any) => {
+    this.dataShareService.selectedSeats$.subscribe(seats => {
       this.selectedSeats = seats || [];
       this.initializePassengerForms();
     });
+
+    this.dataShareService.totalFare$.subscribe(fare => {
+      this.totalFare = fare || 0;
+    });
+
 
     this.dataShareService.busDetails$.subscribe(busDetails => {
       if (busDetails) {
@@ -36,7 +41,6 @@ export class BookingComponent {
         this.departureTime = busDetails.departureTime;
         this.arrivalTime = busDetails.arrivalTime;
         this.busType = busDetails.coachType;
-        this.totalFare = busDetails.fare * this.selectedSeats.length;
       }
     });
   }
@@ -46,13 +50,18 @@ export class BookingComponent {
   }
 
   initializePassengerForms(): void {
-    this.selectedSeats.forEach(() => {
-      this.passengers.push(this.fb.group({
-        name: ['', Validators.required],
-        age: ['', [Validators.required, Validators.min(1)]],
-        contact: ['', [Validators.required, Validators.pattern('^\\d{10}$')]]
-      }));
-    });
+     // Clear the existing passenger forms
+     this.passengers.clear();
+
+     // Add a form group for each selected seat
+     this.selectedSeats.forEach(() => {
+       this.passengers.push(this.fb.group({
+         name: ['', Validators.required],
+         age: ['', [Validators.required, Validators.min(1)]],
+         contact: ['', [Validators.required, Validators.pattern('^\\d{10}$')]],
+         gender: ['', Validators.required]
+       }));
+     });
   }
 
   confirmBooking(): void {

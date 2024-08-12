@@ -42,23 +42,28 @@ export class DataShareService {
   }
 
 
-  // Total Fare
-  private setTotalFareSubject = new BehaviorSubject<any>(null);
+  // // Total Fare
+  // private setTotalFareSubject = new BehaviorSubject<any>(null);
 
-  public setTotalFareSubject$ = this.setTotalFareSubject.asObservable();
+  // public setTotalFareSubject$ = this.setTotalFareSubject.asObservable();
 
-  setTotalFare(totalFare: number){
-    this.setTotalFareSubject.next(totalFare);
+  // setTotalFare(totalFare: number){
+  //   this.setTotalFareSubject.next(totalFare);
+  // }
+
+
+  private selectedSeatsSubject = new BehaviorSubject<number[]>([]);
+  public selectedSeats$ = this.selectedSeatsSubject.asObservable();
+
+  setSelectedSeats(selectedSeats: number[]) {
+    this.selectedSeatsSubject.next(selectedSeats);
   }
 
+  private totalFareSubject = new BehaviorSubject<number>(0);
+  public totalFare$ = this.totalFareSubject.asObservable();
 
-  // Selected Seats
-  private setSelectedSeatsSubject = new BehaviorSubject<any>(null);
-
-  public setSelectedSeatsSubject$ = this.setSelectedSeatsSubject.asObservable();
-
-  setSelectedSeats(selectedSeats: any){
-    this.setSelectedSeatsSubject.next(selectedSeats);
+  setTotalFare(totalFare: number) {
+    this.totalFareSubject.next(totalFare);
   }
 
 
@@ -72,13 +77,7 @@ export class DataShareService {
     }
 
 
-// Selected Seats
-private selectedSeatSubject = new BehaviorSubject<number[]>([]);
-public selectedSeats$ = this.selectedSeatSubject.asObservable();
 
-setSelectedSeat(selectedSeat: number[]) {
-  this.selectedSeatSubject.next(selectedSeat);
-}
 
 
 }
