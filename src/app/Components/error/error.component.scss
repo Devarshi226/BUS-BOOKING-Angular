@@ -1,5 +1,6 @@
 .error-div {
   padding: 5rem;
+  color: var(--second-text-color);
 
   br {
     display: none;
@@ -30,14 +31,10 @@
     button {
       padding: 15px 35px 15px 35px;
       border-radius: 5px;
-      color: white;
+      color: var(--text-color);
       border: none;
-      background-color: #0056b3;
+      background-color: var(--primary-color);
       margin-bottom: 3.5rem;
-    }
-
-    button:hover {
-      background-color: #0350a3;
     }
   }
 

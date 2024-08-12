@@ -1,0 +1,50 @@
+body {
+  background: #f5f5f5;
+}
+
+.container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.card {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 1rem;
+}
+
+.card-header {
+  margin-bottom: 20px;
+}
+
+.nav-pills .nav-link {
+  color: #555;
+}
+
+.nav-pills .nav-link.active {
+  color: white;
+}
+
+.input-group,
+.form-group,
+.row {
+  margin-bottom: 20px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

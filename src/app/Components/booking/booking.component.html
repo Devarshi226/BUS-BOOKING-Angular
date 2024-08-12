@@ -17,20 +17,38 @@
 
   <div class="passenger-info">
     <h4>Passenger Information</h4>
-    <form [formGroup]="bookingForm">
-      <div *ngFor="let passenger of passengers.controls; let i = index" [formGroupName]="i">
-        <h5>Passenger {{i + 1}}</h5>
-        <div class="form-group">
-          <label for="name-{{i}}">Name:</label>
-          <input id="name-{{i}}" type="text" formControlName="name" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="age-{{i}}">Age:</label>
-          <input id="age-{{i}}" type="number" formControlName="age" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="contact-{{i}}">Contact:</label>
-          <input id="contact-{{i}}" type="text" formControlName="contact" class="form-control">
+    <hr>
+    <form [formGroup]="bookingForm" (ngSubmit)="confirmBooking()">
+      <div formArrayName="passengers">
+        <div *ngFor="let passenger of passengers.controls; let i = index" [formGroupName]="i">
+          <h5>Passenger {{i + 1}}</h5>
+            <div class="form-group">
+              <label for="name-{{i}}">Name:</label>
+              <input id="name-{{i}}" type="text" formControlName="name" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="age-{{i}}">Age:</label>
+              <input id="age-{{i}}" type="number" formControlName="age" class="form-control" />
+            </div>
+          <div class="form-group">
+            <label for="contact-{{i}}">Contact:</label>
+            <input id="contact-{{i}}" type="number" formControlName="contact" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Gender:</label>
+            <div class="gender">
+              <label>
+                <input type="radio" formControlName="gender" value="Male" /> Male
+              </label>
+              <label>
+                <input type="radio" formControlName="gender" value="Female" /> Female
+              </label>
+              <label>
+                <input type="radio" formControlName="gender" value="Other" /> Other
+              </label>
+            </div>
+          </div>
+          <hr>
         </div>
       </div>
 
@@ -42,4 +60,3 @@
     </form>
   </div>
 </div>
-

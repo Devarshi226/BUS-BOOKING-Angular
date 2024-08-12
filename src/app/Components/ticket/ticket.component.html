@@ -1,0 +1,35 @@
+<div class="ticket">
+  <h2>Booking Ticket</h2>
+  <div class="ticket-header">
+    <p><strong>Bus Name:</strong> {{busName}}</p>
+    <p><strong>Departure:</strong> {{departureTime}}</p>
+    <p><strong>Arrival:</strong> {{arrivalTime}}</p>
+    <p><strong>Coach Type:</strong> {{busType}}</p>
+  </div>
+
+  <div class="ticket-seats">
+    <h4>Selected Seats</h4>
+    <ul>
+      <li *ngFor="let seat of selectedSeats">Seat {{seat}}</li>
+    </ul>
+  </div>
+
+  <div class="ticket-passenger-info">
+    <h4>Passenger Information</h4>
+    <ul>
+      <li *ngFor="let passenger of passengerDetails">
+        <strong>Name:</strong> {{passenger.name}}<br>
+        <strong>Age:</strong> {{passenger.age}}<br>
+        <strong>Contact:</strong> {{passenger.contact}}<br>
+        <strong>Gender:</strong> {{passenger.gender}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="ticket-total-fare">
+    <h4>Total Fare: {{totalFare | currency:'INR'}}</h4>
+  </div>
+
+  <button class="btn btn-primary">Download Ticket</button>
+</div>
+
