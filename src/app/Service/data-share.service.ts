@@ -42,6 +42,38 @@ export class DataShareService {
   }
 
 
+  // // Bus Date
+  private setBusDateSubject = new BehaviorSubject<any>(null);
+
+  public setBusDateSubject$ = this.setBusDateSubject.asObservable();
+
+  setBusDate(busDate: string){
+    this.setBusDateSubject.next(busDate);
+  }
+
+  // source
+
+  private setSourceSubject = new BehaviorSubject<any>(null);
+
+  public setSourceSubject$ = this.setSourceSubject.asObservable();
+
+  setSource(departure: string){
+    this.setSourceSubject.next(departure);
+  }
+
+  // destination
+
+  private setDestinationSubject = new BehaviorSubject<any>(null);
+
+  public setDestinationSubject$ = this.setDestinationSubject.asObservable();
+
+  setDestination(destination: string){
+    this.setDestinationSubject.next(destination);
+  }
+
+
+
+
   // // Total Fare
   // private setTotalFareSubject = new BehaviorSubject<any>(null);
 
@@ -63,6 +95,7 @@ export class DataShareService {
   public totalFare$ = this.totalFareSubject.asObservable();
 
   setTotalFare(totalFare: number) {
+
     this.totalFareSubject.next(totalFare);
   }
 
