@@ -12,6 +12,8 @@ import { BusSearchDataComponent } from './Components/bus-search-data/bus-search-
 import { SeatSelectionComponent } from './Components/seat-selection/seat-selection.component';
 import { authGuard } from './guards/auth.guard';
 import { BookingComponent } from './Components/booking/booking.component';
+import { PaymentComponent } from './Components/payment/payment.component';
+import { TicketComponent } from './Components/ticket/ticket.component';
 
 const routes: Routes = [
   {path:'header', component:HeaderComponent},
@@ -25,6 +27,8 @@ const routes: Routes = [
   {path:'search', component:BusSearchDataComponent},
   {path:'seatselaction', component:SeatSelectionComponent, canActivate: [authGuard] },
   {path:'booking', component:BookingComponent, canActivate: [authGuard] },
+  {path: 'payment', component:PaymentComponent, canActivate: [authGuard] },
+  { path: 'ticket', component:TicketComponent, canActivate: [authGuard] },
   { path: '**', redirectTo: '/error' }
 
 ];

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataShareService } from 'src/app/Service/data-share.service';
 
 @Component({
@@ -18,17 +19,22 @@ export class BookingComponent {
   busType: string = '';
   totalFare: number = 0;
 
-  constructor(private fb: FormBuilder, private dataShareService: DataShareService) {
+  constructor(private fb: FormBuilder, private dataShareService: DataShareService, private router: Router) {
     this.bookingForm = this.fb.group({
       passengers: this.fb.array([])
     });
   }
 
   ngOnInit(): void {
-    this.dataShareService.selectedSeats$.subscribe((seats:any) => {
+    this.dataShareService.selectedSeats$.subscribe(seats => {
       this.selectedSeats = seats || [];
       this.initializePassengerForms();
     });
+
+    this.dataShareService.totalFare$.subscribe(fare => {
+      this.totalFare = fare || 0;
+    });
+
 
     this.dataShareService.busDetails$.subscribe(busDetails => {
       if (busDetails) {
@@ -36,7 +42,6 @@ export class BookingComponent {
         this.departureTime = busDetails.departureTime;
         this.arrivalTime = busDetails.arrivalTime;
         this.busType = busDetails.coachType;
-        this.totalFare = busDetails.fare * this.selectedSeats.length;
       }
     });
   }
@@ -46,13 +51,18 @@ export class BookingComponent {
   }
 
   initializePassengerForms(): void {
-    this.selectedSeats.forEach(() => {
-      this.passengers.push(this.fb.group({
-        name: ['', Validators.required],
-        age: ['', [Validators.required, Validators.min(1)]],
-        contact: ['', [Validators.required, Validators.pattern('^\\d{10}$')]]
-      }));
-    });
+     // Clear the existing passenger forms
+     this.passengers.clear();
+
+     // Add a form group for each selected seat
+     this.selectedSeats.forEach(() => {
+       this.passengers.push(this.fb.group({
+         name: ['', Validators.required],
+         age: ['', [Validators.required, Validators.min(1)]],
+         contact: ['', [Validators.required, Validators.pattern('^\\d{10}$')]],
+         gender: ['', Validators.required]
+       }));
+     });
   }
 
   confirmBooking(): void {
@@ -69,6 +79,10 @@ export class BookingComponent {
 
       console.log('Booking Confirmed:', bookingData);
       // You can handle further logic here, like sending booking data to the server.
+
+
+    this.dataShareService.setPassengerDetails(bookingData.passengerDetails);
+    this.router.navigate(['/ticket']);
     }
   }
 }
