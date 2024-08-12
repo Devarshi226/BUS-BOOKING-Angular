@@ -1,6 +1,6 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
-@import 'light-theme';
-@import 'dark-theme';
+// @import 'light-theme';
+// @import 'dark-theme';
 
 body {
  margin: 0;
@@ -67,18 +67,18 @@ body {
   --second-text-color:#ffffff;
 }
 
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
+// body {
+//   background-color: var(--background-color);
+//   color: var(--text-color);
+// }
 
-.header {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-}
+// .header {
+//   background-color: var(--primary-color);
+//   color: var(--text-color);
+// }
 
-.button {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  border: 1px solid var(--primary-color);
-}
+// .button {
+//   background-color: var(--secondary-color);
+//   color: var(--text-color);
+//   border: 1px solid var(--primary-color);
+// }

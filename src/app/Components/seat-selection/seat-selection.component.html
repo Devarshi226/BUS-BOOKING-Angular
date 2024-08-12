@@ -5,25 +5,19 @@
 
     <div class="bus seat2-2  p-0">
       <div class="bus-head"><img src="assets/steering.png"></div>
-        <div *ngFor="let row of seats; let i = index" class="seat-row-{{ i + 1 }}">
+      <div *ngFor="let row of seats; let i = index" class="seat-row-{{ i + 1 }}">
 
-          <ol class="seats">
-            <li *ngFor="let seat of row" class="seat">
-              <input
-                role="input-passenger-seat"
-                [id]="'seat-checkbox-' + (i + 1) + '-' + seat.value"
-                [value]="seat.value"
-                type="checkbox"
-                [disabled]="seat?.cursor"
-                (change)="onSeatChange(seat)"
-              />
-              <label [for]="'seat-checkbox-' + (i + 1) + '-' + seat.value" [ngClass]="{ 'dis' : seat.disabled }">
-                {{ seat.value }}
-              </label>
-            </li>
-          </ol>
-        </div>
+        <ol class="seats">
+          <li *ngFor="let seat of row" class="seat">
+            <input role="input-passenger-seat" [id]="'seat-checkbox-' + (i + 1) + '-' + seat.value" [value]="seat.value"
+              type="checkbox" [disabled]="seat?.cursor" (change)="onSeatChange(seat)" />
+            <label [for]="'seat-checkbox-' + (i + 1) + '-' + seat.value" [ngClass]="{ 'dis' : seat.disabled }">
+              {{ seat.value }}
+            </label>
+          </li>
+        </ol>
       </div>
+    </div>
 
     <div class="seat-info" style="color: var(--primary-color);">
       <div class="info-seats">
@@ -53,7 +47,7 @@
         </tr>
         <tr>
           <td>Fare:</td>
-          <td>{{ totalFare | currency }}</td>
+          <td>{{ totalFare | currency:'INR' }}</td>
         </tr>
 
       </table>
@@ -62,7 +56,7 @@
   </div>
 </div>
 <div class="button-container">
-  <button class="btn btn-primary">Book-Now</button>
+  <button class="btn" routerLink="/booking">Book-Now</button>
 </div>
 <div *ngIf="showErrorMessage" class="error-message">
   You can select a maximum of 4 seats.

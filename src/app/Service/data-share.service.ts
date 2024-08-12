@@ -63,7 +63,22 @@ export class DataShareService {
 
 
 
+    // Bus Details
+    private busDetailsSubject = new BehaviorSubject<any>(null);
+    public busDetails$ = this.busDetailsSubject.asObservable();
 
+    setBusDetails(busDetails: any) {
+      this.busDetailsSubject.next(busDetails);
+    }
+
+
+// Selected Seats
+private selectedSeatSubject = new BehaviorSubject<number[]>([]);
+public selectedSeats$ = this.selectedSeatSubject.asObservable();
+
+setSelectedSeat(selectedSeat: number[]) {
+  this.selectedSeatSubject.next(selectedSeat);
+}
 
 
 }

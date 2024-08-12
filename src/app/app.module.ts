@@ -25,6 +25,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AuthApi } from './environment/authApi';
+import { BookingComponent } from './Components/booking/booking.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { AuthApi } from './environment/authApi';
     ErrorComponent,
     BusSearchDataComponent,
     SeatSelectionComponent,
+    BookingComponent,
 
   ],
   imports: [

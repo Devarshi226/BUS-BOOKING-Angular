@@ -107,7 +107,7 @@ body {
 }
 
 .bus {
-  border: 3px solid #020202;
+  border: 3px solid var(--primary-color);
   width: 15%;
   padding: 0.5rem;
   border-radius: 15px;
@@ -221,6 +221,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 0px;
+  margin-bottom: 40px;
 }
 
 
@@ -253,5 +254,16 @@ body {
 .button-container{
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  width: 7%;
+  // float:right;
+  // padding: 3px 20px;
+  margin: 40px 0px 20px 900px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn {
+  border: none;
+  color: var(--text-color);
 }
