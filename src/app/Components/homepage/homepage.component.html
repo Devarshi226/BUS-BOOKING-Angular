@@ -11,7 +11,7 @@
                   <option *ngFor="let place of places" [value]="place.key">{{ place.value }}</option>
                 </select>
               </div>
-              <div class="form-group col-md-1 icon-wrapper">
+              <div class="form-group col-md-1 icon-wrapper" style="cursor: pointer;">
                 <ion-icon name="swap-horizontal" (click)="swapCities()"></ion-icon>
               </div>
               <div class="form-group col-md-3">
@@ -35,7 +35,7 @@
           </form>
         </div>
         <div class="">
-          <button [disabled]="searchForm.invalid" class="btn btn-block btn-search btn-sm" (click)="onSubmit()" style="color: white">
+          <button [disabled]="searchForm.invalid" class="btn btn-block btn-search btn-sm" (click)="onSubmit()" style="color: white; cursor: pointer;">
             <i class="fas mr-2 fa-search"></i> Search Buses
           </button>
         </div>
