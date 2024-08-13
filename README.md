@@ -12,12 +12,14 @@
 - **html2canvas**: ^1.4.1
 - **jsPDF**: ^2.5.1
 - **Node.js**: ^20.15.1
+- **json-server**: ^1.0.0
 
 ### Credentials
 - **User Login**:
   - **Useremail**: `demo@demo.com`
   - **Password**: `Demo@1234`
-
+-**Json-Server-Port**:
+  - **Port**: 3000
 ---
 
 # MyTrip.com - Online Bus Booking Platform 🚌
