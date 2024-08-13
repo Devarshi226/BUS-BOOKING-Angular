@@ -14,12 +14,9 @@
 - **Node.js**: ^20.15.1
 
 ### Credentials
-- **Admin Login**:
-  - **Username**: `admin`
-  - **Password**: `admin123`
 - **User Login**:
-  - **Username**: `user`
-  - **Password**: `user123`
+  - **Useremail**: `demo@demo.com`
+  - **Password**: `Demo@1234`
 
 ---
 
@@ -88,7 +85,3 @@ We're here to help! If you have any queries, suggestions, or need support, pleas
 - **Address**: Ahmedabad, Gujarat 📮📞🏢
 
 Thank you for choosing MyTrip.com for your bus travel needs. We look forward to making your journey comfortable and convenient. Happy travels! 🚌🎟️🌟
-
----
-
-This should provide a clear overview of your project's configuration, including version details and login credentials.
