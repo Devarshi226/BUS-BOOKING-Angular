@@ -2,6 +2,9 @@
 
 ## Project Configuration ⚙️
 
+**Note:** This app's **Login**, **Signup**, and **Forgot Password** functionalities are managed by Firebase Authentication service.
+
+
 ### Version Details
 - **Angular CLI**: ~15.2.0
 - **Angular Fire**: ^7.6.1
@@ -88,3 +91,6 @@ We're here to help! If you have any queries, suggestions, or need support, pleas
 - **Address**: Ahmedabad, Gujarat 📮📞🏢
 
 Thank you for choosing MyTrip.com for your bus travel needs. We look forward to making your journey comfortable and convenient. Happy travels! 🚌🎟️🌟
+
+
+© 2024 Devarshi Kathiriya(Devarshi226). All rights reserved.

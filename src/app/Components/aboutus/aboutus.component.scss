@@ -1,0 +1,47 @@
+.about-us-container {
+  padding: 20px;
+  background-color: var(--background-color);
+  color: var(--second-text-color);
+  width: 60%;
+  margin-left: 400px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--primary-color);
+}
+
+.about-us-card {
+  background-color: var(--card-background-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.about-us-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-us-details {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.about-us-image {
+  max-width: 120px;
+  border-radius: 10px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+p {
+  line-height: 1.6;
+  color: var(--second-text-color);
+}
