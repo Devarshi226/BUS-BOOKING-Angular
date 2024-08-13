@@ -1,4 +1,4 @@
-<div class="receipt-content">
+<!-- <div class="receipt-content">
   <div class="container bootstrap snippets bootdey">
   <div class="row">
     <div class="col-md-12">
@@ -125,4 +125,127 @@
 
 
 
+ -->
 
+
+
+ <div class="receipt-content">
+  <div class="container bootstrap snippets bootdey">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="invoice-wrapper">
+          <div class="intro">
+            <strong style="color: rgb(11, 161, 11);">Confirm Booking</strong>,
+            <br>
+            <strong>Thank you for your booking! via MyTrip.com</strong>
+          </div>
+
+          <div class="payment-info">
+            <div class="row">
+              <div class="col-sm-6">
+                <span>PNR No.</span>
+                <strong>434334343</strong>
+              </div>
+              <div class="col-sm-6 text-right">
+                <span>Journey Date</span>
+                <strong>{{busdate | date}}</strong>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <span>Journey From</span>
+                <strong>{{Source}}</strong>
+              </div>
+              <div class="col-sm-6 text-right">
+                <span>Journey To</span>
+                <strong>{{Destination}}</strong>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <span>Trip Code</span>
+                <strong>2130ABDMTMDSL30</strong>
+              </div>
+              <div class="col-sm-6 text-right">
+                <span>Departure Time:</span>
+                <strong>{{departureTime || '12:00'}} Hrs</strong>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <span>Class</span>
+                <strong>{{busType}}</strong>
+              </div>
+              <div class="col-sm-6 text-right">
+                <span>No. of Seats:</span>
+                <strong>{{selectedSeats.length}}</strong>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <span>Seat No/s:</span>
+                <strong>{{selectedSeats.join(', ')}}</strong>
+              </div>
+              <div class="col-sm-6 text-right">
+                <span>Txn Password:</span>
+                <strong>Vpx6W7wb</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="line-items">
+            <div class="headers clearfix">
+              <div class="Passanger-Details">
+                <div>No</div>
+                <div>Passenger Name</div>
+                <div>Seat No.</div>
+              </div>
+            </div>
+            <div class="items">
+              <div class="item Passanger-Details" *ngFor="let passenger of passengerDetails; let i = index">
+                <div>{{ i + 1 }}</div>
+                <div>{{ passenger.name }}</div>
+                <div>{{ passenger.seatNo }}</div>
+              </div>
+            </div>
+
+
+            <div class="total text-right EndBlock">
+              <div class="EndBlock1">
+                <p class="extra-notes">
+                  <strong>Extra Notes</strong>
+                  Please Make Sure Carry the Ticket During Trip , For Any Help or Complaint Contact +912345678910.
+                </p>
+              </div>
+              <div class="EndBlock2">
+                <div class="field">
+                  Subtotal <span>{{ totalFare  | currency:'INR' }}</span>
+                </div>
+                <div class="field">
+                  Tax <span>8%</span>
+                </div>
+                <div class="field grand-total">
+                  Total <span>{{ ((totalFare) * 1.08) | currency:'INR' }}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="print">
+              <a (click)="printTicket()">
+                <i class="fa fa-print"></i>
+                Print this receipt
+              </a>
+            </div>
+            <div class="BackToHome">
+              <a routerLink="/">Back to Home</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          Copyright © 2024. MyTrip.com
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
