@@ -13,9 +13,6 @@ import { FormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { LoginComponent } from './login-signup/login/login.component';
-import { SignupComponent } from './login-signup/signup/signup.component';
-import { ForgotComponent } from './login-signup/forgot/forgot.component';
 import { ErrorComponent } from './Components/error/error.component';
 import { BusSearchDataComponent } from './Components/bus-search-data/bus-search-data.component';
 import {MatButtonModule} from '@angular/material/button';
@@ -39,9 +36,6 @@ import { ContactComponent } from './Components/contact/contact.component';
     HeaderComponent,
     FooterComponent,
     BusScheduleComponent,
-    LoginComponent,
-    SignupComponent,
-    ForgotComponent,
     ErrorComponent,
     BusSearchDataComponent,
     SeatSelectionComponent,
