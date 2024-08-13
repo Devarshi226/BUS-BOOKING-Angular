@@ -14,10 +14,14 @@ import { authGuard } from './guards/auth.guard';
 import { BookingComponent } from './Components/booking/booking.component';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { TicketComponent } from './Components/ticket/ticket.component';
+import { AboutusComponent } from './Components/aboutus/aboutus.component';
+import { ContactComponent } from './Components/contact/contact.component';
 
 const routes: Routes = [
   {path:'header', component:HeaderComponent},
   {path:'', component:HomepageComponent},
+  {path:'about', component:AboutusComponent},
+  {path:'contact', component:ContactComponent},
   {path:'footer', component:FooterComponent},
   {path:'bus-schedule', component:BusScheduleComponent},
   {path:'login', component:LoginComponent},
