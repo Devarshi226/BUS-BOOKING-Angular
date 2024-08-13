@@ -18,8 +18,9 @@
 - **User Login**:
   - **Useremail**: `demo@demo.com`
   - **Password**: `Demo@1234`
--**Json-Server-Port**:
-  - **Port**: 3000
+-**JsonServer-Port**:
+  - **buses.json**: 3000
+  -**BusSearchData.json** : 4000
 ---
 
 # MyTrip.com - Online Bus Booking Platform 🚌
