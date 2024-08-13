@@ -63,12 +63,19 @@ Explore the key features of MyTrip.com:
 
 ## Demo Photos
 
-![homepage](https://github.com/Devarshi226/BUS-BOOKING-Angular/)
+![homepage](https://github.com/Devarshi226/BUS-BOOKING-Angular/blob/f6b80748edea0f38bd7d99e13096a91e8afe4a18/src/assets/Screen-shot/home.png)
 ![route_search](https://github.com/Devarshi226/BUS-BOOKING-Angular/)
 ![seat_selection](https://github.com/Devarshi226/BUS-BOOKING-Angular/)
 ![payment_page](https://github.com/Devarshi226/BUS-BOOKING-Angular/)
 ![confirmation_page](https://github.com/Devarshi226/BUS-BOOKING-Angular/)
 
+
+booking-summary.png
+bus-schedule.png
+home.png
+payment.png
+seat-selection.png
+ticket.png
 ## How to Use the Website 🖥️
 
 1. **Searching Bus Routes**: Use the search bar to enter your departure and arrival points. Browse through the available routes and select the one that suits you best.
