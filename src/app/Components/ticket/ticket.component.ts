@@ -43,17 +43,17 @@ export class TicketComponent {
        this.busdate = setBusDateSubject;
     });
 
-    this.dataShareService.setSource("Ahmedabad")
+    // this.dataShareService.setSource("Ahmedabad")
     this.dataShareService.setSourceSubject$.subscribe(setSourceSubject => {
       this.Source = setSourceSubject ;
     });
 
-    this.dataShareService.setDestination("Rajkot")
+    // this.dataShareService.setDestination("Rajkot")
     this.dataShareService.setDestinationSubject$.subscribe(setDestinationSubject => {
       this.Destination = setDestinationSubject;
     });
 
-    this.dataShareService.setBusType("AC Volvo")
+    // this.dataShareService.setBusType("AC Volvo")
     this.dataShareService.setBusTypeSubject$.subscribe(setBusTypeSubject => {
       this.busType = setBusTypeSubject;
     });

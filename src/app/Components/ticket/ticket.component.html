@@ -17,7 +17,7 @@
             </div>
             <div class="col-sm-6 text-right">
               <span>Journey Date</span>
-              <strong>{{busdate}}</strong>
+              <strong>{{busdate | date}}</strong>
             </div>
           </div>
           <div class="row">
@@ -71,7 +71,7 @@
             </div>
           </div>
           <div class="items">
-            <div class=" item Passanger-Details" *ngFor="let passenger of passengers; let i = index">
+            <div class="item Passanger-Details" *ngFor="let passenger of passengers; let i = index">
               <div >{{ i + 1 }}</div>
               <div >{{ passenger.name }}</div>
               <div >{{ passenger.seatNo }}</div>
