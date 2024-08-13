@@ -4,9 +4,6 @@ import { HeaderComponent } from './Reusable-Component/header/header.component';
 import { HomepageComponent } from './Components/homepage/homepage.component';
 import { FooterComponent } from './Reusable-Component/footer/footer.component';
 import { BusScheduleComponent } from './Components/bus-schedule/bus-schedule.component';
-import { LoginComponent } from './login-signup/login/login.component';
-import { SignupComponent } from './login-signup/signup/signup.component';
-import { ForgotComponent } from './login-signup/forgot/forgot.component';
 import { ErrorComponent } from './Components/error/error.component';
 import { BusSearchDataComponent } from './Components/bus-search-data/bus-search-data.component';
 import { SeatSelectionComponent } from './Components/seat-selection/seat-selection.component';
@@ -16,6 +13,7 @@ import { PaymentComponent } from './Components/payment/payment.component';
 import { TicketComponent } from './Components/ticket/ticket.component';
 import { AboutusComponent } from './Components/aboutus/aboutus.component';
 import { ContactComponent } from './Components/contact/contact.component';
+import { loginsignupComponent } from './login-signup/login-signup.component';
 
 const routes: Routes = [
   {path:'header', component:HeaderComponent},
@@ -24,9 +22,9 @@ const routes: Routes = [
   {path:'contact', component:ContactComponent},
   {path:'footer', component:FooterComponent},
   {path:'bus-schedule', component:BusScheduleComponent},
-  {path:'login', component:LoginComponent},
-  {path:'signup', component:SignupComponent},
-  {path:'forgot', component:ForgotComponent},
+  {path:'auth',  component: loginsignupComponent,
+    loadChildren:() => import('./login-signup/login-signup.module').then((x) => x.loginSignupModule),
+  },
   {path:'error', component:ErrorComponent},
   {path:'search', component:BusSearchDataComponent},
   {path:'seatselaction', component:SeatSelectionComponent, canActivate: [authGuard] },
