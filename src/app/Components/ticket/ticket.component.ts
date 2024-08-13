@@ -10,82 +10,62 @@ import html2canvas from 'html2canvas';
 })
 export class TicketComponent {
 
-  busName: string = '';
-  departureTime: string = '';
-  arrivalTime: string = '';
-  busType: string = '';
-  selectedSeats: number= 0
-  passengerDetails: any[] = [];
-  totalFare: number = 0;
-  busdate: string = '';
-  Source: string = '';
-  Destination: string = '';
+busName: string = '';
+departureTime: string = '';
+arrivalTime: string = '';
+busType: string = '';
+selectedSeats: number[] = [];
+passengerDetails: any[] = [];
+totalFare: number = 0;
+busdate: string = '';
+Source: string = '';
+Destination: string = '';
 
+constructor(private dataShareService: DataShareService) {}
 
-  constructor(private dataShareService: DataShareService) {}
-  passengers = [
-    { name: 'John Doe', seatNo: '12' },
-    { name: 'Jane Smith', seatNo: '13' },
-    { name: 'Mike Johnson', seatNo: '15' }
-  ];
+ngOnInit(): void {
+  this.dataShareService.busDetails$.subscribe(busDetails => {
+    if (busDetails) {
+      this.busName = busDetails.name;
+      this.departureTime = busDetails.departureTime;
+      this.arrivalTime = busDetails.arrivalTime;
+      this.busType = busDetails.coachType;
+    }
+  });
 
-  ngOnInit(): void {
-    this.dataShareService.busDetails$.subscribe(busDetails => {
-      if (busDetails) {
-        this.busName = busDetails.name;
-        this.departureTime = busDetails.departureTime;
-        this.arrivalTime = busDetails.arrivalTime;
-        this.busType = busDetails.coachType;
-      }
-    });
+  this.dataShareService.setBusDateSubject$.subscribe(setBusDateSubject => {
+    this.busdate = setBusDateSubject;
+  });
 
-    this.dataShareService.setBusDateSubject$.subscribe(setBusDateSubject => {
-       this.busdate = setBusDateSubject;
-    });
+  this.dataShareService.setSourceSubject$.subscribe(setSourceSubject => {
+    this.Source = setSourceSubject ;
+  });
 
-    // this.dataShareService.setSource("Ahmedabad")
-    this.dataShareService.setSourceSubject$.subscribe(setSourceSubject => {
-      this.Source = setSourceSubject ;
-    });
+  this.dataShareService.setDestinationSubject$.subscribe(setDestinationSubject => {
+    this.Destination = setDestinationSubject;
+  });
 
-    // this.dataShareService.setDestination("Rajkot")
-    this.dataShareService.setDestinationSubject$.subscribe(setDestinationSubject => {
-      this.Destination = setDestinationSubject;
-    });
+  this.dataShareService.selectedSeats$.subscribe(seats => {
+    this.selectedSeats = seats || [];
+  });
 
-    // this.dataShareService.setBusType("AC Volvo")
-    this.dataShareService.setBusTypeSubject$.subscribe(setBusTypeSubject => {
-      this.busType = setBusTypeSubject;
-    });
+  this.dataShareService.totalFare$.subscribe(fare => {
+    this.totalFare = fare || 0;
+  });
 
-    this.dataShareService.setBusDate("2021-09-01")
-    this.dataShareService.setBusDateSubject$.subscribe(setBusDateSubject => {
-      this.busdate = setBusDateSubject;
-    });
-
-
-
-
-
-this.dataShareService.setSeat(4)
-    this.dataShareService.setSubject$.subscribe(seats => {
-      this.selectedSeats = seats;
-    });
-
-
-    this.dataShareService.setTotalFare(100);
-    this.dataShareService.totalFare$.subscribe(fare => {
-      this.totalFare = fare || 0;
-    });
-
-    this.dataShareService.passengerDetails$.subscribe(details => {
-      this.passengerDetails = details || [];
-    });
-  }
-
-  printTicket() {
-    window.print();
-  }
-
-
+  this.dataShareService.passengerDetails$.subscribe(details => {
+    this.passengerDetails = details.map((detail, index) => {
+      return {
+        ...detail,
+        seatNo: this.selectedSeats[index]
+      };
+    }) || [];
+  });
 }
+
+printTicket() {
+  window.print();
+}
+}
+
+

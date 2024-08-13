@@ -28,6 +28,8 @@ import { AuthApi } from './environment/authApi';
 import { BookingComponent } from './Components/booking/booking.component';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { TicketComponent } from './Components/ticket/ticket.component';
+import { AboutusComponent } from './Components/aboutus/aboutus.component';
+import { ContactComponent } from './Components/contact/contact.component';
 
 
 @NgModule({
@@ -46,6 +48,8 @@ import { TicketComponent } from './Components/ticket/ticket.component';
     BookingComponent,
     PaymentComponent,
     TicketComponent,
+    AboutusComponent,
+    ContactComponent,
 
   ],
   imports: [

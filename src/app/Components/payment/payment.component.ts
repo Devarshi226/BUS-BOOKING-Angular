@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -10,7 +11,7 @@ export class PaymentComponent {
   paymentForm: FormGroup;
   banks: string[] = ['Bank 1', 'Bank 2', 'Bank 3', 'Bank 4', 'Bank 5'];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.paymentForm = this.fb.group({
       cardOwner: ['', Validators.required],
       cardNumber: ['', [Validators.required, Validators.pattern('^[0-9]{16}$')]],
@@ -43,6 +44,8 @@ export class PaymentComponent {
     if (this.paymentForm.valid) {
       const paymentData = this.paymentForm.value;
       console.log('Payment Confirmed:', paymentData);
+      this.router.navigate(['/ticket']);
+
       // Handle further payment logic here
     }
   }

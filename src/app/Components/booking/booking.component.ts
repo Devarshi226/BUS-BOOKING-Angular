@@ -82,7 +82,7 @@ export class BookingComponent {
 
 
     this.dataShareService.setPassengerDetails(bookingData.passengerDetails);
-    this.router.navigate(['/ticket']);
+    this.router.navigate(['/payment']);
     }
   }
 }
