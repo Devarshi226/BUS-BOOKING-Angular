@@ -13,6 +13,27 @@
       "destination": "surat",
       "date": "2024-08-13",
       "passengers": 1
+    },
+    {
+      "id": "cbec",
+      "departure": "ahmedabad",
+      "destination": "surat",
+      "date": "2024-08-14",
+      "passengers": "2"
+    },
+    {
+      "id": "ad43",
+      "departure": "surat",
+      "destination": "bhavnagar",
+      "date": "2024-08-14",
+      "passengers": 1
+    },
+    {
+      "id": "c113",
+      "departure": "surat",
+      "destination": "bhavnagar",
+      "date": "2024-08-14",
+      "passengers": 1
     }
   ]
 }
