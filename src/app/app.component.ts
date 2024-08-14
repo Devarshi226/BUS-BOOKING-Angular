@@ -8,6 +8,5 @@ import { ThemeService } from './Service/theme.service';
 })
 export class AppComponent {
   constructor(public themeService: ThemeService) {
-  // Apply theme on app initialization
   }
 }
