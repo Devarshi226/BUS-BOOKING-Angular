@@ -43,14 +43,6 @@ export class SignupComponent {
       localStorage.setItem('uid',this.uid);
       this.signinForm.reset();
       this.route.navigate(['login']);
-
-
-      // this.dataservice.sendUserdata({
-      //   userName: this.signUpForm.value.userName,
-      //   role: this.signUpForm.value.role,
-      //   mobileNo: this.signUpForm.value.mobileNo,
-
-      // })
     }, (error:any) => {
       console.error(error);
     });
