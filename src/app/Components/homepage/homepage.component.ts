@@ -7,12 +7,6 @@ import { map, startWith, switchMap } from 'rxjs/operators';
 import { BusesService } from 'src/app/Service/buses.service';
 import { SearchService } from 'src/app/Service/search.service';
 
-// interface Bus {
-//   name: string;
-//   departureTime: string;
-//   arrivalTime: string;
-//   fare: number;
-// }
 
 @Component({
   selector: 'app-homepage',
@@ -69,11 +63,9 @@ export class HomepageComponent  implements OnInit {
         (response) => {
           console.log('Form data saved:', response);
           this.route.navigate(['/search']);
-          // Handle success response, e.g., show a notification
         },
         (error) => {
           console.error('Error saving form data:', error);
-          // Handle error response, e.g., show an error message
         }
       );
 

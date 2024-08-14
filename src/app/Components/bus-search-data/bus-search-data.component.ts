@@ -50,11 +50,6 @@ export class BusSearchDataComponent {
 
   }
 
-  // viewSeats(bus: any){
-  //   this.dataShareService.setBusType(bus['coach type']);
-  //   this.dataShareService.setFare(bus.fare);
-  //   this.router.navigate(['/seatselaction']);
-  // }
 
   viewSeats(bus: any) {
     this.dataShareService.setBusDetails({
