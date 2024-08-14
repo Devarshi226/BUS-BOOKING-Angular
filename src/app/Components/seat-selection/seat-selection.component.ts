@@ -75,7 +75,6 @@ export class SeatSelectionComponent  implements OnInit {
     [{ value: 17, disabled: false, selected: false, cursor: false }, { value: 18, disabled: false, selected: false, cursor: false }, { value: 19, disabled: false, selected: false, cursor: false }, { value: 20, disabled: false, selected: false, cursor: false }],
     [{ value: 21, disabled: false, selected: false, cursor: false }, { value: 22, disabled: false, selected: false, cursor: false }, { value: 23, disabled: false, selected: false, cursor: false }, { value: 24, disabled: false, selected: false, cursor: false }],
     [{ value: 25, disabled: false, selected: false, cursor: false }, { value: 26, disabled: false, selected: false, cursor: false }, { value: 27, disabled: false, selected: false, cursor: false }, { value: 28, disabled: true, selected: false, cursor: false }],
-    // [{ value: 27, disabled: false, selected: false, cursor: false }, { value: 28, disabled: true, selected: false, cursor: false }]
   ];
 
 

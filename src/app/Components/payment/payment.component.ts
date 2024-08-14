@@ -45,8 +45,6 @@ export class PaymentComponent {
       const paymentData = this.paymentForm.value;
       console.log('Payment Confirmed:', paymentData);
       this.router.navigate(['/ticket']);
-
-      // Handle further payment logic here
     }
   }
 }
