@@ -60,7 +60,7 @@ return from(this.authfire.createUserWithEmailAndPassword(user.Email, user.passwo
   Logout() {
     localStorage.removeItem('token')
     localStorage.removeItem('id')
-    this.route.navigate(['login'])
+    this.route.navigate(['auth/login'])
   }
 
   forgotPassword(email: string): Observable<void> {
