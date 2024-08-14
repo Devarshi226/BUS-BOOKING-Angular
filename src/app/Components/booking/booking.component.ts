@@ -78,7 +78,7 @@ export class BookingComponent {
       };
 
       console.log('Booking Confirmed:', bookingData);
-      // You can handle further logic here, like sending booking data to the server.
+
 
 
     this.dataShareService.setPassengerDetails(bookingData.passengerDetails);

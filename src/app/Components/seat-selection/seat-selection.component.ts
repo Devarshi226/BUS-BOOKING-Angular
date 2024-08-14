@@ -45,7 +45,6 @@ export class SeatSelectionComponent  implements OnInit {
       this.fare = fare;
     }
   });
-
   }
 
 
@@ -104,32 +103,6 @@ export class SeatSelectionComponent  implements OnInit {
 
   }
 
-
-  // onSeatChange(seat: any) {
-  //   if (seat.selected) {
-  //     this.selectedSeats = this.selectedSeats.filter(s => s !== seat.value);
-  //     seat.selected = false;
-  //   } else {
-  //     if (this.selectedSeats.length < this.maxSeats) {
-  //       this.selectedSeats.push(seat.value);
-  //       seat.selected = true;
-  //     }
-  //   }
-
-  //   this.seats.forEach(row => {
-  //     row.forEach((seat: any) => {
-  //       if(!seat.selected && (this.selectedSeats.length == this.maxSeats) && !seat.disabled){
-  //         console.log(seat.value)
-  //         seat.cursor = true;
-  //       } else {
-  //         seat.cursor = false
-  //       }
-  //     });
-  //   });
-
-  //   console.log('Selected Seats:', this.selectedSeats);
-  //   this.totalFare = this.fare * this.selectedSeats.length ;
-  // }
 
   onSeatChange(seat: any) {
     if (seat.selected) {
