@@ -51,18 +51,18 @@ export class SeatSelectionComponent  implements OnInit {
 
 
 
-  selectSeat(seat: any) {
-    if (this.selectedSeats.length < this.maxSeats) {
-      this.selectedSeats.push(seat);
-      this.showErrorMessage = false;
-    } else {
-      this.showErrorMessage = true;
-    }
-  }
+  // selectSeat(seat: any) {
+  //   if (this.selectedSeats.length < this.maxSeats) {
+  //     this.selectedSeats.push(seat);
+  //     this.showErrorMessage = false;
+  //   } else {
+  //     this.showErrorMessage = true;
+  //   }
+  // }
 
-  isSelected(seat: any) {
-    return this.selectedSeats.includes(seat);
-  }
+  // isSelected(seat: any) {
+  //   return this.selectedSeats.includes(seat);
+  // }
 
 
 
@@ -81,26 +81,26 @@ export class SeatSelectionComponent  implements OnInit {
 
 
 
-  onMaxSeatsChange(event: Event) {
-    const selectElement = event.target as HTMLSelectElement;
-    this.maxSeats = parseInt(selectElement.value, 10);
+  // onMaxSeatsChange(event: Event) {
+  //   const selectElement = event.target as HTMLSelectElement;
+  //   this.maxSeats = parseInt(selectElement.value, 10);
 
-    if (this.selectedSeats.length > this.maxSeats) {
-      this.selectedSeats = this.selectedSeats.slice(0, this.maxSeats);
-      this.seats.forEach(row => {
-        row.forEach(seat => {
-          if (this.selectedSeats.includes(seat.value)) {
-            seat.selected = true;
-          } else {
-            seat.selected = false;
-          }
-        });
-      });
-    }
+  //   if (this.selectedSeats.length > this.maxSeats) {
+  //     this.selectedSeats = this.selectedSeats.slice(0, this.maxSeats);
+  //     this.seats.forEach(row => {
+  //       row.forEach(seat => {
+  //         if (this.selectedSeats.includes(seat.value)) {
+  //           seat.selected = true;
+  //         } else {
+  //           seat.selected = false;
+  //         }
+  //       });
+  //     });
+  //   }
 
 
 
-  }
+  // }
 
 
   onSeatChange(seat: any) {
