@@ -45,7 +45,6 @@ export class SeatSelectionComponent  implements OnInit {
       this.fare = fare;
     }
   });
-
   }
 
 

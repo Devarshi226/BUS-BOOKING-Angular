@@ -95,7 +95,7 @@ ticket.png
 
 We're here to help! If you have any queries, suggestions, or need support, please reach out to us:
 
-- **Customer Support**: [support@mytrip.com](mailto:support@mytrip.com)
+- **Dev Support**: [devu.support@gmail.com](mailto:devu.support@gmail.com)
 - **Address**: Ahmedabad, Gujarat 📮📞🏢
 
 Thank you for choosing MyTrip.com for your bus travel needs. We look forward to making your journey comfortable and convenient. Happy travels! 🚌🎟️🌟
