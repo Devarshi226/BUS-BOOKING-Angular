@@ -51,8 +51,10 @@ export class BookingComponent {
   }
 
   initializePassengerForms(): void {
+     // Clear the existing passenger forms
      this.passengers.clear();
 
+     // Add a form group for each selected seat
      this.selectedSeats.forEach(() => {
        this.passengers.push(this.fb.group({
          name: ['', Validators.required],
@@ -76,6 +78,7 @@ export class BookingComponent {
       };
 
       console.log('Booking Confirmed:', bookingData);
+
 
 
     this.dataShareService.setPassengerDetails(bookingData.passengerDetails);
