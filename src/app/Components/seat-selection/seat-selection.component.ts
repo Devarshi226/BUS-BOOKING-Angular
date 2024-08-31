@@ -26,9 +26,11 @@ export class SeatSelectionComponent  implements OnInit {
     this.DataShareService.setSubject$.subscribe((data) => {
       console.log(data);
       if(data){
-        this.maxSeats = data;
+        this.maxSeats = parseInt(data);
+        console.log(typeof(this.maxSeats));
+
       }else{
-        this.maxSeats = 3;
+        this.maxSeats = 4;
       }
     }
   );
@@ -116,7 +118,7 @@ export class SeatSelectionComponent  implements OnInit {
 
     this.seats.forEach(row => {
       row.forEach((seat: any) => {
-        if (!seat.selected && (this.selectedSeats.length === this.maxSeats) && !seat.disabled) {
+        if (!seat.selected && ((this.selectedSeats.length) === this.maxSeats) && !seat.disabled) {
           seat.cursor = true;
         } else {
           seat.cursor = false;
