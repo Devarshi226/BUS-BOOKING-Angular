@@ -20,6 +20,13 @@
       "destination": "surat",
       "date": "2024-09-01",
       "passengers": "4"
+    },
+    {
+      "id": "99bc",
+      "departure": "ahmedabad",
+      "destination": "vadodara",
+      "date": "2024-09-01",
+      "passengers": "4"
     }
   ]
 }
