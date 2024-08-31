@@ -42,7 +42,7 @@ export class DataShareService {
   }
 
 
-  // // Bus Date
+  // Bus Date
   private setBusDateSubject = new BehaviorSubject<any>(null);
 
   public setBusDateSubject$ = this.setBusDateSubject.asObservable();
